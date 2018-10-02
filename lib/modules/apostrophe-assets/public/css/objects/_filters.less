@@ -1,0 +1,34 @@
+.o-filter-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  .o-filter { margin-right: 1rem; margin-bottom: 1rem; }
+}
+
+.o-filter {
+  padding: 1rem;
+  color: @color-white;
+  font-family: @font-family-body;
+  font-size: @font-size-meta;
+  background-color: @color-brand-primary;
+  transition: @transition-ease-in-out;
+  border-radius: none;
+  -webkit-appearance: none;
+  border: none;
+
+  svg {
+    max-width: 1rem;
+    margin-left: 1rem;
+  }
+
+  &:hover {
+    background-color: @color-light;
+    color: @color-brand-primary;
+    cursor: pointer;
+    svg g{
+      stroke: @color-brand-primary
+    }
+  }
+}

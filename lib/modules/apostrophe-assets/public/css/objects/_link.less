@@ -1,0 +1,26 @@
+.o-link {
+  display: inline-block;
+  position: relative;
+  padding-bottom: 5px;
+  color: @color-dark;
+  text-decoration: none;
+  &:after {
+    transition: all 0.3s ease;
+    display: block;
+    position: relative;
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: @color-brand-primary;
+    left: 0;
+  }
+  &:hover {
+    &:after {
+      width: ~"calc(100% + 8px)";
+      left: -4px;
+    }
+  }
+  &:active:after {
+    height: 3px;
+  }
+}

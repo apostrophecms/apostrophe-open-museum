@@ -1,0 +1,33 @@
+{
+  "name": "apostrophe-demo-2018",
+  "version": "2.0.0",
+  "description": "Minimal Apostrophe Boilerplate",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/apostrophecms/apostrophe-demo-2018.git"
+  },
+  "author": "P'unk Avenue",
+  "license": "MIT",
+  "dependencies": {
+    "apostrophe": "^2.47.0",
+    "lorem-ipsum": "^1.0.6"
+  },
+  "nodemonConfig": {
+    "verbose": true,
+    "ignore": [
+      "lib/modules/*/public/js/*.js",
+      "locales/*.json",
+      "public/modules/**/*.less",
+      "public/modules/**/*.js",
+      "public/uploads",
+      "public/apos-minified/*.js",
+      "public/css/master-*.less",
+      "data"
+    ],
+    "ext": "json, js, html, less"
+  }
+}

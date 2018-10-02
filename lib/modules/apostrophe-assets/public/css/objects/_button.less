@@ -1,0 +1,29 @@
+.o-button {
+  display: inline-block;
+  padding: 2rem 3rem;
+  border: 1px solid @color-brand-primary;
+  text-align: center;
+  font-size: @font-size-meta;
+  font-family: @font-family-display;
+  font-weight: 700;
+  color: @color-brand-primary;
+  background-color: @color-white;
+  text-decoration: none;
+  transition: @transition-ease-in-out;
+  &:hover { box-shadow: @shadow; }
+  &:active { box-shadow: none; }
+}
+
+.o-button--large {
+  padding: 3rem 5rem;
+  background-color: @color-brand-primary;
+  color: @color-white;
+}
+
+.o-button--ghost {
+  border-color: @color-white;
+  color: @color-white;
+  background-color: transparent;
+  &:hover { background-color: fade(@color-white, 50%) }
+  &:active { background-color: @color-white; color: @color-brand-primary; }
+}

@@ -1,0 +1,23 @@
+.o-tag-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  .o-tag { margin-right: 1rem; margin-bottom: 1rem; }
+}
+
+.o-tag {
+  display: inline-block;
+  text-decoration: none;
+  font-size: @font-size-meta;
+  background-color: @color-light;
+  border: 1px solid @color-brand-primary;
+  color: @color-brand-primary;
+  font-family: @font-family-body;
+  text-transform: uppercase;
+  padding: 1rem;
+  transition: @transition-ease-in-out;
+  &:hover { border-color: @color-light; }
+  &:active { border-color: @color-brand-primary; background-color: @color-brand-primary; color: @color-white; }
+}

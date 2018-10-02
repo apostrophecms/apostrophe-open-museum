@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+{% import 'svgs.html' as svgs %}
+
+{% block main %}
+  <nav class="sg-nav">
+    <ul class="sg-list sg-nav-items">
+      {% for item in data.nav %}
+        <li class="sg-nav-item">
+          <a class="sg-nav-link">{{ item.label }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+  <main class="sg-body">
+    <h1 class="sg-h1">Style Guide</h1>
+    <div class="sg-sections">
+      <section name="colors" class="sg-section">
+        <h2 class="sg-h2">Colors</h2>
+        <ul class="sg-list sg-color-items">
+          {% for item in data.colors %}
+            <li class="sg-color-item">
+              <div class="{{ item.class }} sg-color-swatch"></div>
+              <span class="sg-color-label">{{ item.label }}</span>
+            </li>
+          {% endfor %}
+        </ul>
+      </section>
+      <section name="type" class="sg-section">
+        <h2 class="sg-h2">Typography</h2>
+        <ul class="sg-list sg-type-items">
+        {% for item in data.type %}
+          <li class="sg-type-item">
+            <div class="sg-meta">{{ item.label }}</div>
+            <div class="{{ item.class }}">{{ item.content }}</div>
+          </li>
+        {% endfor %}
+        </ul>
+      </section>
+      <section name="ui" class="sg-section">
+        <h2 class="sg-h2">UI</h2>
+        <ul class="sg-list sg-ui-items">
+          <li class="sg-ui-item">
+            <div class="sg-meta">A Link</div>
+            <a class="o-link o-body" href="#">This is a link</a>
+          </li>
+          <li class="sg-ui-item">
+            <div class="sg-meta">Buttons</div>
+            <a class="o-button" href="#">This normal is a button</a>
+          </li>
+          <li class="sg-ui-item">
+            <a class="o-button o-button--large" href="#">This large is a button</a>
+          </li>
+          <li class="sg-ui-item o-background-dark" style="padding: 20px">
+            <a class="o-button o-button--ghost" href="#">This ghost is a button</a>
+          </li>
+          <li class="sg-ui-item">
+            <div class="sg-meta">Tags</div>
+            <ul class="o-tag-list">
+              <li><a class="o-tag" href="#">This is a tag</a></li>
+              <li><a class="o-tag" href="#">This too</a></li>
+              <li><a class="o-tag" href="#">You better believe it</a></li>
+            </ul>
+          </li>
+          <li class="sg-ui-item">
+            <div class="sg-meta">Filters</div>
+            <button class="o-filter">Painting {{ svgs.x() }}</button>
+          </li>
+          <li class="sg-ui-item">
+            <div class="sg-meta">Pagination</div>
+            <ul class="o-pagination-list">
+              <li class="o-pagination-item"><a class="o-pagination-link" href="#">1</a></li>
+              <li class="o-pagination-item"><a class="o-pagination-link s-active" href="#">2</a></li>
+              <li class="o-pagination-item"><a class="o-pagination-link" href="#">3</a></li>
+              <li class="o-pagination-item"><a class="o-pagination-link o-pagination-link--svg" href="#">{{ svgs.chevronRight() }}</a></li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      <section name="forms" class="sg-section">
+        <h2 class="sg-h2">Forms</h2>
+        <ul class="sg-list">
+          <li>
+            <div class="sg-meta">Text Input</div>
+            <div class="o-field-container">
+              <label class="o-field-label">First Name</label>
+              <input class="o-field-input o-field-input--text" type="text">
+            </div>
+          </li>
+          <li>
+            <div class="sg-meta">Checkbox</div>
+            <div class="o-field-container o-field-container--checkbox">
+              <input class="o-field-input o-field-input--checkbox" type="checkbox">
+              <div class="o-field-input-checkbox-ui"></div>
+              <label class="o-field-label">Painting</label>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </main>
+{% endblock %}
