@@ -19,8 +19,29 @@ var apos = require('apostrophe')({
 
     // If a template is not found somewhere else, serve it from the top-level
     // `views/` folder of the project
+
+    // Setup
+    'apostrophe-templates': { viewsFolderFallback: path.join(__dirname, 'views') },
+    'helpers': {},
     'styleguide': {},
-    'apostrophe-templates': { viewsFolderFallback: path.join(__dirname, 'views') }
+
+    // Pieces
+    'artists': {},
+    'artists-pages': {},
+    'artists-widgets': {},
+
+    'locations': {},
+    'locations-pages': {},
+    'locations-widgets': {},
+
+    'artworks': {},
+    'artworks-pages': {},
+    'artworks-widgets': {},
+
+    // Content Widgets
+    'image-widgets': {},
+    'slideshow-widgets': {},
+    'logo-mask-widgets': {}
 
   }
 });

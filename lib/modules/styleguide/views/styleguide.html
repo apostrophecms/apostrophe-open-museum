@@ -96,6 +96,15 @@
           </li>
         </ul>
       </section>
+      <section class="sg-section">
+        <h2 class="sg-h2">Content Widgets</h2>
+        <div class="sg-meta">Logo Mask</div>
+        {{ apos.singleton(data.page, 'logoMask', 'logo-mask') }}
+        <div class="sg-meta">Single Image</div>
+        {{ apos.singleton(data.page, 'imageTwo', 'image') }}
+        <div class="sg-meta">Slideshow</div>
+        {{ apos.singleton(data.page, 'slideshow', 'slideshow') }}
+      </section>
     </div>
   </main>
 {% endblock %}

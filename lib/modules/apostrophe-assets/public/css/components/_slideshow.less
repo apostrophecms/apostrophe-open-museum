@@ -1,0 +1,69 @@
+.c-slideshow__container {
+  width: 100%;
+  padding-bottom: 100%;
+  height: 0;
+  background-color: @color-brand-secondary;
+}
+
+.c-slideshow {
+  border: 1px solid @color-brand-primary
+}
+
+.c-slideshow__container img {
+  max-height: 100%;
+  height: 0;
+  position: absolute;
+  height: auto;
+  width: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.c-slideshow__header {
+  display: flex;
+  justify-content: space-between;
+  padding: 3rem;
+}
+
+.c-slideshow__title {
+  width: 55%;
+}
+
+.c-slideshow__info {
+  display: flex;
+  align-items: baseline;
+  width: 45%;
+  margin-top: 0.9rem;
+}
+
+.c-slideshow__gallery-description-items {
+  text-align: right;
+  max-width: 23rem;
+}
+
+.c-slideshow__gallery-pager {
+  display: flex;
+  align-items: center;
+  min-width: 5rem;
+  margin-left: 1rem;
+}
+
+.c-slideshow__pager-button {
+  border: 0;
+  background: transparent;
+  svg {
+    max-width: 6px;
+    padding-top: 4px;
+  }
+}
+
+.c-slideshow__pager-count {
+  display: inline-block;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}

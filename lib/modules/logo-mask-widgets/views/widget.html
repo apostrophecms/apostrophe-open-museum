@@ -1,0 +1,13 @@
+{% import 'svgs.html' as svgs %}
+{% import 'image.html' as image %}
+{% if data.widget.image.items %}
+  {% set imageObj = data.widget.image.items[0]._pieces[0] %}
+{% endif %}
+
+<div class="c-logo-mask">
+  {% if imageObj %}
+    {{ svgs.logoMask(apos.attachments.url(imageObj.item.attachment, { size: 'full', crop: imageObj.relationship })) }}
+  {% else %}
+    No image set
+  {% endif %}
+</div>

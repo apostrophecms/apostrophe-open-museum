@@ -1,0 +1,3 @@
+{% macro render(imageObj, options= {size: 'full', alt: 'no alt provided'} ) %}
+  <img src="{{ apos.attachments.url(imageObj.item.attachment, { size: options.size, crop: imageObj.relationship }) }}" alt="{{ options.alt }}">
+{% endmacro %}

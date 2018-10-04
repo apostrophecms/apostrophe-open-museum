@@ -32,3 +32,18 @@
     </g>
   </svg>
 {% endmacro %}
+
+{% macro logoMask(path) %}
+  <svg width="256px" height="485px" viewBox="0 0 256 485" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+      <mask id="logo-mask">
+        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <g transform="translate(-623.000000, -7260.000000)" fill="white">
+            <path d="M623,7639.62751 C702.847342,7604.01898 743.32253,7557.63459 744.425562,7500.47436 L623,7500.48799 L623,7260 L878.572964,7260 L877.572964,7485.48799 C877.572964,7605.32669 811.254677,7691.8136 678.618102,7744.94872 C634.426646,7661.04241 664.605055,7719.30189 623,7639.62751 Z" id="Mask"></path>
+          </g>
+        </g>
+      </mask>
+    </defs>
+    <image width="100%" height="100%" preserveAspectRatio="xMidYMid slice" xlink:href="{{ path }}" mask="url(#logo-mask)"></image>
+  </svg>
+{% endmacro %}
