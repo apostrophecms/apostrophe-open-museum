@@ -25,6 +25,10 @@ var apos = require('apostrophe')({
     'helpers': {},
     'styleguide': {},
 
+    // Catagorical Piece Types
+    'categories': { instantiate: false },
+    'category-object-types': { extend: 'categories' },
+
     // Pieces
     'artists': {},
     'artists-pages': {},
@@ -41,7 +45,13 @@ var apos = require('apostrophe')({
     // Content Widgets
     'image-widgets': {},
     'slideshow-widgets': {},
-    'logo-mask-widgets': {}
+    'logo-mask-widgets': {},
+    'link-widgets': {},
+    'marquee-widgets': {},
+    'feature-widgets': { extend: 'marquee-widgets' },
+
+    // Layout Widgets
+    'columns-widgets': {}
 
   }
 });

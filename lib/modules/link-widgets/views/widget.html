@@ -1,0 +1,13 @@
+{% set w = data.widget %}
+{% if w.linkType === 'page' %}
+  {% set url = w._linkPage._url %}
+{% elif w.linkType === 'custom' %}
+  {% set url = w.linkUrl %}
+{% else %}
+  {{ apos.log('error detecting link type') }}
+  {% set url = '#' %}
+{% endif %}
+
+<div class="c-link">
+  <a class="{{ w.linkStyle }} c-link__link" href="{{ url }}">{{ w.linkText }}</a>
+</div>

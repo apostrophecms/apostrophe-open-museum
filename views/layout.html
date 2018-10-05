@@ -1,6 +1,8 @@
 {# Automatically extends the right outer layout and also handles AJAX siutations #}
 {% extends data.outerLayout %}
 
+{% import 'navigation.html' as navigation %}
+
 {% block title %}
   {# Create a useful, SEO-friendly title tag based on what we have #}
   {% if data.piece %}
@@ -20,10 +22,7 @@
 {% endblock %}
 
 {% block beforeMain %}
-  {#
-    We recommend you use the beforeMain block for global page components
-    like headers or navigation.
-  #}
+  {{ navigation.render(apos, data.home, data.page) }}
 {% endblock %}
 
 {% block main %}
@@ -35,7 +34,5 @@
 {% endblock %}
 
 {% block afterMain %}
-  {#
-    This would be a great place to put a global footer.
-  #}
+  <footer style="margin-top: 300px"></footer>
 {% endblock %}

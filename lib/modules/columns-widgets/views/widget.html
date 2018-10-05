@@ -1,0 +1,33 @@
+{% set w = data.widget %}
+
+{% if w.background %}
+  {% set bg = w.background %}
+{% else %}
+  {% set bg = 'none' %}
+{% endif %}
+
+{% if w.config %}
+  {% set config = w.config %}
+{% else %}
+  {% set config = 'two' %}
+{% endif %}
+
+{% if config === 'two' %}
+  {% set columns = 2 %}
+{% elif  config === 'three' %}
+  {% set columns = 3 %}
+{% else %}
+  {% set columns = 2 %}
+{% endif %}
+
+<div class="{{ bg }} c-columns c-columns--{{ config }}">
+  <div class="o-container c-columns__inner">
+    {% for column in range(0, columns) %}
+      <div class="c-columns__column c-columns__column--{{ column }}">
+        {{ apos.area(w, 'column' + (column + 1), {
+          widgets: apos.helpers.baseWidgets
+        }) }}
+      </div>
+    {% endfor %}
+  </div>
+</div>

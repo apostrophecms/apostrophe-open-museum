@@ -1,0 +1,38 @@
+.c-columns {
+  padding: 5rem 0 10rem 0;
+}
+
+.c-columns__inner {
+  display: flex;
+
+}
+
+.c-columns--cream { background-color: @color-brand-secondary }
+.c-columns--lightPurple { background-color: @color-light }
+
+// Column Variations
+.c-columns--two {
+  .c-columns__column--0 {
+    width: 55%;
+    margin-right: 13%;
+  }
+  .c-columns__column--1 {
+    width: 32%;
+  }
+}
+
+.c-columns--three {
+  .c-columns__column--0 {
+    margin-left: 8%;
+    width: 25%;
+    margin-right: 8%;
+  }
+  .c-columns__column--1 {
+    width: 25%;
+    margin-right: 8%;
+  }
+  .c-columns__column--2 {
+    margin-right: 8%;
+    width: 18%;
+  }
+}

@@ -4,4 +4,9 @@
 .o-background-white { background-color: @color-white }
 
 .o-background-brand-primary { background-color: @color-brand-primary }
-.o-background-brand-secondary { background-color: @color-brand-secondary }
+.o-background-brand-secondary {
+  background-color: @color-brand-secondary;
+  .c-rich-text {
+    color: @color-brand-primary
+  }
+}

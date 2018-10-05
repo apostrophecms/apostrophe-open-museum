@@ -1,0 +1,5 @@
+{% if data.options.template %}
+  {% extends data.options.template + '.html' %}
+{% else %}
+  {% extends 'widgetBase.html' %}
+{% endif %}

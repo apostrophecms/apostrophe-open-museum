@@ -6,12 +6,9 @@
 {% extends "layout.html" %}
 
 {% block main %}
-  <div class="main-content">
-    <h3>Hello world!
-      {% if not data.user %}
-        <a class="login-link" href="/login">Login</a>
-      {% endif %}
-    </h3>
-    <p>This is a very bare bones Apostrophe project. Now, get to work and make a real website!</p>
-  </div>
+  <main class="o-wrapper">
+    {{ apos.area(data.page, 'body', {
+      widgets: apos.helpers.baseWidgets
+    }) }}
+  </main>
 {% endblock %}

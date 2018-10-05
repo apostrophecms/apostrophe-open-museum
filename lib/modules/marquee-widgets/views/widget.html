@@ -1,0 +1,27 @@
+ {% if data.widget.screen === undefined %}
+  {% set screen = '0.2' %}
+{% else %}
+  {% set screen = data.widget.screen %}
+{% endif %}
+
+{% set imageSchema = apos.helpers._find(data.manager.schema, { name: 'image' }) %}
+
+<div class="c-marquee{% if data.manager.options.modifier %} {{ data.manager.options.modifier }}{% endif %}">
+  <div class="c-marquee__inner">
+    <div class="c-marquee__background">
+      {{ apos.singleton(data.widget, 'image', 'apostrophe-images', imageSchema.options) }}
+    </div>
+    <div class="o-screen" style="opacity:{{ screen }}"></div>
+    <div class="o-container c-marquee__content">
+      {{ apos.area(data.widget, 'content', {
+        widgets: {
+          'apostrophe-rich-text': {
+            toolbar: apos.helpers.baseToolbar,
+            styles: apos.helpers.baseStyles
+          },
+          'link': {}
+        }
+      }) }}
+    </div>
+  </div>
+</div>
