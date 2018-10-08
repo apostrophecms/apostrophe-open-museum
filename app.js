@@ -24,6 +24,7 @@ var apos = require('apostrophe')({
     'apostrophe-templates': { viewsFolderFallback: path.join(__dirname, 'views') },
     'helpers': {},
     'styleguide': {},
+    'apostrophe-headless': {},
 
     // Pages
     'default-pages': {},
@@ -41,7 +42,9 @@ var apos = require('apostrophe')({
     'locations-pages': {},
     'locations-widgets': {},
 
-    'artworks': {},
+    'artworks': {
+      restApi: true
+    },
     'artworks-pages': {},
     'artworks-widgets': {},
 

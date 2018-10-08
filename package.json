@@ -14,6 +14,7 @@
   "license": "MIT",
   "dependencies": {
     "apostrophe": "^2.47.0",
+    "apostrophe-headless": "^2.4.0",
     "lorem-ipsum": "^1.0.6"
   },
   "nodemonConfig": {
