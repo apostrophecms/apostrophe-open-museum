@@ -1,0 +1,17 @@
+{% set w = data.widget %}
+{% import 'macros/button.html' as button %}
+{% import 'macros/artwork-cards.html' as artworkCards %}
+
+<div class="o-container c-artworks-widget">
+  <header class="c-artworks-widgets__header">
+    {% if w.title %}
+      <h3 class="o-headline o-color-brand-primary">{{ w.title }}</h3>
+    {% endif %}
+    {% if w._page %}
+      {{ button.render('View ' + w._page.title, w._page._url) }}
+    {% endif %}
+  </header>
+  <div class="c-artworks-widget__content">
+    {{ artworkCards.render(w._pieces) }}
+  </div>
+</div>

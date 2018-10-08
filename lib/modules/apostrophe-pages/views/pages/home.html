@@ -1,14 +1,1 @@
-{#
-  This is an example home page template. It inherits and extends a layout template
-  that lives in the top-level views/ folder for convenience
-#}
-
-{% extends "layout.html" %}
-
-{% block main %}
-  <main class="o-wrapper">
-    {{ apos.area(data.page, 'body', {
-      widgets: apos.helpers.baseWidgets
-    }) }}
-  </main>
-{% endblock %}
+{% extends "pages/default.html" %}

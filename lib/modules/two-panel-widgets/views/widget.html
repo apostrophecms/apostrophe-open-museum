@@ -1,0 +1,18 @@
+{% set w = data.widget %}
+{% if w.config %}
+  {% set config = w.config %}
+{% else %}
+  {% set config = 'c-two-panel--content-left' %}
+{% endif %}
+
+{% set areaSchema = apos.helpers._find(data.manager.schema, { name: 'body' }) %}
+{% set imageSchema = apos.helpers._find(data.manager.schema, { name: 'image' }) %}
+
+<div class="o-background-brand-secondary c-two-panel {{ config }}">
+  <div class="c-two-panel__content c-two-panel__body">
+    {{ apos.area(w, 'body', areaSchema.options) }}
+  </div>
+  <div class="c-two-panel__content c-two-panel__media">
+    {{ apos.singleton(w, 'image', 'apostrophe-images', imageSchema.options) }}
+  </div>
+</div>

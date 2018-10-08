@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% import "macros/masthead.html" as masthead %}
+{% import "macros/peerNav.html" as peerNav %}
+{% set page = data.page %}
+
+{% if page.peerNav !== false %}
+  {% set wrapper = 'o-container' %}
+{% else %}
+  {% set wrapper = 'o-wrapper' %}
+{% endif %}
+
+{% block main %}
+  {% if page.masthead !== false %}
+    {{ masthead.render(page) }}
+  {% endif %}
+
+  <div class="{{ wrapper }} o-page">
+    {% if page.peerNav !== false %}
+      {{ peerNav.render(page._ancestors[0]._children, page) }}
+    {% endif %}
+    <main class="c-area">
+      {{ apos.area(data.page, 'body', {
+        widgets: apos.helpers.baseWidgets
+      }) }}
+    </main>
+  </div>
+
+{% endblock %}

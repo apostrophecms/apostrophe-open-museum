@@ -1,0 +1,3 @@
+{% macro render(label, url, options) %}
+  <a href="{{ url }}" class="o-button{% if options.class %} {{ options.class }}{% endif %}">{{ label }}</a>
+{% endmacro %}

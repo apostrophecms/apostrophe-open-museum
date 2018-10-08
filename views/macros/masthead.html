@@ -1,0 +1,22 @@
+{% macro render(page, tabs) %}
+  <div class="o-background-light c-masthead">
+    <div class="o-container c-masthead__inner">
+      <ul class="c-masthead__breadcrumbs-items">
+        {% for ancestor in page._ancestors %}
+          <li class="o-body c-masthead__breadcrumbs-item">
+            <a class="c-masthead__breadcrumbs-link" href="{{ ancestor._url }}">{{ ancestor.title }}</a>  / 
+          </li>
+        {% endfor %}
+        <li class="o-body c-masthead__breadcrumbs-item">
+          <a class="c-masthead__breadcrumbs-link" href="{{ page._url }}">{{ page.title }}</a>
+        </li>
+      </ul>
+      <h1 class="o-title c-masthead__title">{{ page.title }}</h1>
+      {% if page.description %}
+        <p class="o-subheadline c-masthead__description">
+          {{ page.description }}
+        </p>
+      {% endif %}
+    </div>
+  </div>
+{% endmacro %}

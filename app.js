@@ -25,6 +25,9 @@ var apos = require('apostrophe')({
     'helpers': {},
     'styleguide': {},
 
+    // Pages
+    'default-pages': {},
+
     // Catagorical Piece Types
     'categories': { instantiate: false },
     'category-object-types': { extend: 'categories' },
@@ -49,6 +52,7 @@ var apos = require('apostrophe')({
     'link-widgets': {},
     'marquee-widgets': {},
     'feature-widgets': { extend: 'marquee-widgets' },
+    'two-panel-widgets': {},
 
     // Layout Widgets
     'columns-widgets': {}

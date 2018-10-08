@@ -1,0 +1,33 @@
+{% import 'macros/image.html' as image %}
+
+{% macro card(artwork) %}
+    <a class="c-artworks-card" href="{{ artwork._url }}">
+      <div class="c-artworks-card__media">
+        {{ image.render(artwork.thumbnail.items[0]._pieces[0], {alt: artwork.title }) }}
+      </div>
+      <div class="c-artworks-card__content">
+        <span class="o-body c-artworks-card__info c-artworks-card__title"><strong>{{ artwork.title }}</strong></span>
+        <span class="o-body c-artworks-card__info c-artworks-card__artist">{{ artwork._artist.title }}</span>
+        <span class="o-meta c-artworks-card__info c-artworks-card__type">{{ artwork._objectType.title }}</span>
+        <span class="o-meta c-artworks-card__info c-artworks-card__date">{{ artwork.year }}</span>
+      </div>
+    </a>
+{% endmacro %}
+
+{% macro cards(arr) %}
+    <div class="c-artworks-cards">
+      {% for item in arr %}
+        {{ card(item) }}
+      {% endfor %}
+    </div>
+{% endmacro %}
+
+{% macro render(data) %}
+  {% if apos.helpers._isArray(data) %}
+    {{ cards(data) }}
+  {% elif apos.helpers._isObject %}
+    {{ card(data) }}
+  {% else %}
+    {{ apos.log('didnt pass object or array to artwork-cards macro') }}
+  {% endif %}
+{% endmacro %}
