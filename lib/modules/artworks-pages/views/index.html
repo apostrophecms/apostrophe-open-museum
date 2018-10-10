@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+{% import "macros/masthead.html" as masthead %}
+{% import "macros/filters.html" as filters %}
+{% import "macros/artwork-cards.html" as cards %}
+{% import 'apostrophe-pager:macros.html' as pager %}
+
+{% block main %}
+  {{ masthead.render(data.page) }}
+  <div class="o-container o-container--narrow">
+    {{ filters.render(data.piecesFilters) }}
+    {{ cards.render(data.pieces) }}
+    <div class="c-pager">
+      {{ pager.render({ page: data.currentPage, total: data.totalPages }, data.url) }}
+    </div>
+  </div>
+{% endblock %}

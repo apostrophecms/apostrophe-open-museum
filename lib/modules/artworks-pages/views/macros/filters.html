@@ -1,0 +1,31 @@
+{% macro render(piecesFilters) %}
+  <form class="c-filters" data-artwork-filters>
+    <div class="o-field-container">
+      <label class="o-field-label">Artist / Keyword</label>
+      <input class="o-field-input o-field-input--text" id="search" name="search" type="text">
+    </div>
+    {# <div class="o-field-container">
+      <label class="o-field-label">Era</label>
+      range
+      <input class="o-field-input o-field-input--text" type="text">
+    </div> #}
+    <div class="o-field-container">
+      <label class="o-field-label">Object Type</label>
+      <select class="o-field-input o-field-input--select" name="objectType" id="objectType" data-auto-submit>
+        <option value=""></option>
+        {% for objectType in piecesFilters.objectType %}
+          <option value="{{ objectType.value }}">{{ objectType.label }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="o-field-container">
+      <label class="o-field-label">Location</label>
+      <select class="o-field-input o-field-input--select" name="location" id="location" data-auto-submit>
+        <option value=""></option>
+        {% for location in piecesFilters.location %}
+          <option value="{{ location.value }}">{{ location.label }}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </form>
+{% endmacro %}

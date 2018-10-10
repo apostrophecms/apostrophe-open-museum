@@ -24,6 +24,10 @@ var apos = require('apostrophe')({
     'apostrophe-templates': { viewsFolderFallback: path.join(__dirname, 'views') },
     'helpers': {},
     'styleguide': {},
+    'pager': { 
+      extend: 'apostrophe-pager',
+      alias: 'myPager'
+    },
 
     // Pages
     'default-pages': {},

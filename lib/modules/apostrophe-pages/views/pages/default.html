@@ -5,8 +5,12 @@
 
 {% if page.peerNav !== false %}
   {% set wrapper = 'o-container' %}
+  {% set widgets = apos.helpers.narrowWidgets %}
+  {{ apos.log('hello') }}
+  {# {{ apos.log(widgets) }} #}
 {% else %}
   {% set wrapper = 'o-wrapper' %}
+  {% set widgets = apos.helpers.baseWidgets %}
 {% endif %}
 
 {% block main %}
@@ -18,9 +22,9 @@
     {% if page.peerNav !== false %}
       {{ peerNav.render(page._ancestors[0]._children, page) }}
     {% endif %}
-    <main class="c-area">
+    <main class="u-small-dropdowns c-area">
       {{ apos.area(data.page, 'body', {
-        widgets: apos.helpers.baseWidgets
+        widgets: widgets
       }) }}
     </main>
   </div>
