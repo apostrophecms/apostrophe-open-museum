@@ -1,7 +1,8 @@
 {# Automatically extends the right outer layout and also handles AJAX siutations #}
 {% extends data.outerLayout %}
 
-{% import 'navigation.html' as navigation %}
+{% import 'header.html' as header %}
+{% import 'footer.html' as footer %}
 
 {% block title %}
   {# Create a useful, SEO-friendly title tag based on what we have #}
@@ -22,7 +23,7 @@
 {% endblock %}
 
 {% block beforeMain %}
-  {{ navigation.render(apos, data.home, data.page) }}
+  {{ header.render(apos, data.home, data.page, data.global.logoImages) }}
 {% endblock %}
 
 {% block main %}
@@ -34,5 +35,5 @@
 {% endblock %}
 
 {% block afterMain %}
-  <footer style="margin-top: 300px"></footer>
+  {{ footer.render(apos, data.home, data.page, data.global.logoImages) }}
 {% endblock %}

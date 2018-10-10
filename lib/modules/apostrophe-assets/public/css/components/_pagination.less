@@ -1,0 +1,34 @@
+.c-pager .apos-pager {
+  background-color: transparent;
+  padding: 2rem 0;
+}
+
+.c-pager .apos-pager-number.apos-active {
+  font-weight: 700;
+  color: @color-brand-primary;
+  &:after {
+    bottom: 0.2rem;
+    background-color: @color-brand-primary;
+  }
+}
+
+.c-pager .apos-pager-number {
+  display: inline-block;
+  padding: 0.5rem;
+  position: relative;
+  text-decoration: none;
+  display: inline-block;
+  font-size: @font-size-lede;
+  font-family: @font-family-body;
+  color: @color-brand-primary;
+  &:after {
+    position: absolute;
+    content: '' !important;
+    bottom: 0rem;
+    width: 100%;
+    left: 0;
+    height: 1px;
+    background-color: transparent;
+    transition: @transition-ease-in-out;
+  }
+}

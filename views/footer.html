@@ -1,0 +1,15 @@
+{% import 'navigation.html' as navigation %}
+
+{% macro render(apos, home, currentPage, images) %}
+  <footer class="o-background-light c-footer">
+    <div class="o-container c-footer__inner">
+      <div class="c-footer__nav">
+        {{ navigation.render(apos, home, currentPage, images) }}
+      </div>
+      <div class="o-body o-body--small c-footer__credit">
+        This is the <a target="_blank" href="http://apostrophecms.org">ApostropheCMS</a> Demo site <br/>
+        Apostrophe is led by P’unk Avenue in Philadelphia, PA.
+      </div>
+    </div>
+  </footer>
+{% endmacro %}

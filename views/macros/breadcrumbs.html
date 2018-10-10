@@ -1,0 +1,12 @@
+{% macro render(page) %}
+  <ul class="c-breadcrumbs__items">
+    {% for ancestor in page._ancestors %}
+      <li class="o-body c-breadcrumbs__item">
+        <a class="c-breadcrumbs__link" href="{{ ancestor._url }}">{{ ancestor.title }}</a>  / 
+      </li>
+    {% endfor %}
+    <li class="o-body c-breadcrumbs__item">
+      <a class="c-breadcrumbs__link" href="{{ page._url }}">{{ page.title }}</a>
+    </li>
+  </ul>
+{% endmacro %}

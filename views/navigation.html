@@ -1,22 +1,21 @@
 {% import 'macros/svgs.html' as svgs %}
-{% set img = 'https://images.unsplash.com/photo-1538695926400-a700bc012d23?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=85110e3d3efbb76a53a8dfad194f1e48&auto=format&fit=crop&w=1268&q=80'%}
 
-{% macro render(apos, home, currentPage) %}
-  <nav class="o-container c-navigation">
-    <a href="/" class="c-navigation__logo">
-      <span class="c-navigation__logo-mask">
-        {{ svgs.logoMask(img) }}
-      </span>
-      {{ svgs.logoType() }}
-    </a>
-    <ul class="c-navigation__items">
-      {% for tab in home._children %}
-        <li class=" c-navigation__item
-          {% if currentPage and (apos.pages.isAncestorOf(tab, currentPage) or tab._id == currentPage._id) %}
-            c-navigation__item--active
-          {% endif %}
-        "><a class="o-body c-navigation__link" href="{{ tab._url }}">{{ tab.title }}</a></li>
-      {% endfor %}
-    </ul>
-  </nav>
+{% macro render(apos, home, currentPage, images) %}
+  {% set logoObj = apos.helpers._shuffle(images.items[0]._pieces)[0] %}
+  {% set logoUrl = apos.attachments.url(logoObj.item.attachment, { size: 'full', crop: logoObj.relationship })  %}
+  <a href="/" class="c-navigation__logo">
+    <span class="c-navigation__logo-mask">
+      {{ svgs.logoMask(logoUrl) }}
+    </span>
+    {{ svgs.logoType() }}
+  </a>
+  <ul class="c-navigation__items">
+    {% for tab in home._children %}
+      <li class=" c-navigation__item
+        {% if currentPage and (apos.pages.isAncestorOf(tab, currentPage) or tab._id == currentPage._id) %}
+          c-navigation__item--active
+        {% endif %}
+      "><a class="o-body c-navigation__link" href="{{ tab._url }}">{{ tab.title }}</a></li>
+    {% endfor %}
+  </ul>
 {% endmacro %}
