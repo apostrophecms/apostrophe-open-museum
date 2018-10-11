@@ -1,4 +1,4 @@
-.c-artworks-cards {
+.c-artworks-cards:not(.c-artworks-cards--horizontal) {
   display: grid;
   height: 100%;
   grid-template-columns: 30% 30% 30%;
@@ -45,3 +45,28 @@
 
 .c-artworks-card__title { margin-bottom: 0.5rem; }
 .c-artworks-card__artist { margin-bottom: 2rem; }
+
+.c-artworks-cards--horizontal {
+   .c-artworks-card {
+     display: flex;
+     margin-bottom: 4rem;
+     border: 0;
+     &:hover {
+       box-shadow: none;
+       img { outline: 1px solid @color-dark; }
+     }
+   }
+   .c-artworks-card__media {
+     height: auto;
+     width: 35rem;
+     margin-bottom: none;
+     img {
+       position: relative;
+       max-height: none;
+       top: auto;
+       right: auto;
+       bottom: auto;
+       left: auto;
+     }
+   }
+}

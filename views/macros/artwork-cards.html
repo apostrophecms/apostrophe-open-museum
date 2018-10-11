@@ -14,17 +14,17 @@
     </a>
 {% endmacro %}
 
-{% macro cards(arr) %}
-    <div class="c-artworks-cards">
+{% macro cards(arr, options) %}
+    <div class="c-artworks-cards {% if options.class %} {{ options.class }}{% endif %}">
       {% for item in arr %}
         {{ card(item) }}
       {% endfor %}
     </div>
 {% endmacro %}
 
-{% macro render(data) %}
+{% macro render(data, options) %}
   {% if apos.helpers._isArray(data) %}
-    {{ cards(data) }}
+    {{ cards(data, options) }}
   {% elif apos.helpers._isObject %}
     {{ card(data) }}
   {% else %}
