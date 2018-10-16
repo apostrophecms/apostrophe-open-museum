@@ -1,13 +1,11 @@
 {% extends "layout.html" %}
 {% import "macros/masthead.html" as masthead %}
-{% import "macros/peerNav.html" as peerNav %}
+{% import "macros/peer-nav.html" as peerNav %}
 {% set page = data.page %}
 
 {% if page.peerNav !== false %}
   {% set wrapper = 'o-container' %}
   {% set widgets = apos.helpers.narrowWidgets %}
-  {{ apos.log('hello') }}
-  {# {{ apos.log(widgets) }} #}
 {% else %}
   {% set wrapper = 'o-wrapper' %}
   {% set widgets = apos.helpers.baseWidgets %}

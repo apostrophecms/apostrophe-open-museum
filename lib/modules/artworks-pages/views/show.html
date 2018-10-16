@@ -4,6 +4,7 @@
 {% import 'apostrophe-templates:macros/breadcrumbs.html' as breadcrumbs %}
 {% import 'macros/artwork-cards.html' as cards %}
 {% import 'macros/image.html' as image %}
+{% import 'macros/definitionList.html' as dl %}
 
 {% block main %}
   <main class="o-mt-6 o-container o-container--medium c-artwork-page">
@@ -15,28 +16,26 @@
     <figure class="c-artwork-page__image">
       {{ image.render(piece.thumbnail.items[0]._pieces[0]) }}
     </figure>
-    <div class="o-container o-container--narrow c-artwork-page__content">
-      <div class="c-artwork-page__meta">
+    <div class="o-container o-container--narrow c-meta-columns c-artwork-page__content">
+      <div class="c-meta-columns__left c-artwork-page__meta">
         <dl class="c-defintion-list c-artwork-page__meta-list">
-            <dt class="o-body c-definition-list__term">Date</dt>
-            <dd class="o-subheadline c-definition-list__detail">{{ piece.year }}</dd>
-            <dt class="o-body c-definition-list__term">Medium</dt>
-            <dd class="o-subheadline c-definition-list__detail">{{ piece.medium }}</dd>
-            <dt class="o-body c-definition-list__term">Dimensions</dt>
-            <dd class="o-subheadline c-definition-list__detail">{{ piece.dimensions }}</dd>
-            <dt class="o-body c-definition-list__term">Location</dt>
-            <dd class="o-subheadline c-definition-list__detail">{{ piece._location.title }}</dd>
+          {{ dl.render(piece, [
+            { name: 'year', label: 'Date' },
+            { name: 'medium' },
+            { name: 'dimensions' },
+            { name: ['_location', 'title'], label: 'Location' }
+          ]) }}
         </dl>
       </div>
-      <div class="c-artwork-page__body">
+      <div class="c-meta-columns__right c-artwork-page__body">
         {{ apos.area(piece, 'body', { widgets: apos.helpers.narrowWidgets }) }}
       </div>
     </div>
-    <div class="o-container o-container--narrow c-artwork-page__artist">
-      <figure class="c-artwork-page__artist__thumbnail">
+    <div class="o-container o-container--narrow c-meta-columns c-artwork-page__artist">
+      <figure class="c-meta-columns__left c-artwork-page__artist__thumbnail">
         {{ image.render(artist.thumbnail.items[0]._pieces[0]) }}
       </figure>
-      <div class="c-artwork-page__artist__description">
+      <div class="c-meta-columns__right c-artwork-page__artist__description">
         <h4 class="o-subheadline">About {{ artist.title }}</h4>
         <p class="o-body">
           {{ artist.description }}
@@ -44,9 +43,9 @@
         <a href="{{ artist._url }}" class="o-button">Learn More</a>
       </div>
     </div>
-    <div class="o-container o-container--narrow c-artwork-page__related">
+    <div class="o-container c-artwork-page__related">
       <h4 class="o-headline o-color-brand-primary c-artwork-page__related__header">Related Work</h4>
-      {{ cards.render(data._related, { class: 'c-artworks-cards--horizontal' }) }}
+      {{ cards.render(data._related, { class: 'o-cards--horizontal' }) }}
     </div>
   </main>
 {% endblock %}

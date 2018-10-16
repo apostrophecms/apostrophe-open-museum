@@ -1,21 +1,21 @@
 {% import 'macros/image.html' as image %}
 
 {% macro card(artwork) %}
-    <a class="c-artworks-card" href="{{ artwork._url }}">
-      <div class="c-artworks-card__media">
+    <a class="o-card c-artworks-card" href="{{ artwork._url }}">
+      <div class="o-card__media c-artworks-card__media">
         {{ image.render(artwork.thumbnail.items[0]._pieces[0], {alt: artwork.title }) }}
       </div>
-      <div class="c-artworks-card__content">
-        <span class="o-body c-artworks-card__info c-artworks-card__title"><strong>{{ artwork.title }}</strong></span>
-        <span class="o-body c-artworks-card__info c-artworks-card__artist">{{ artwork._artist.title }}</span>
-        <span class="o-meta c-artworks-card__info c-artworks-card__type">{{ artwork._objectType.title }}</span>
-        <span class="o-meta c-artworks-card__info c-artworks-card__date">{{ artwork.year }}</span>
+      <div class="o-card__content c-artworks-card__content">
+        <span class="o-body o-card__info c-artworks-card__title"><strong>{{ artwork.title }}</strong></span>
+        <span class="o-body o-card__info c-artworks-card__artist">{{ artwork._artist.title }}</span>
+        <span class="o-meta o-card__info c-artworks-card__type">{{ artwork._objectType.title }}</span>
+        <span class="o-meta o-card__info c-artworks-card__date">{{ artwork.year }}</span>
       </div>
     </a>
 {% endmacro %}
 
 {% macro cards(arr, options) %}
-    <div class="c-artworks-cards {% if options.class %} {{ options.class }}{% endif %}">
+    <div class="o-cards {% if options.class %} {{ options.class }}{% endif %}">
       {% for item in arr %}
         {{ card(item) }}
       {% endfor %}

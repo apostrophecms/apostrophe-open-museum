@@ -1,0 +1,10 @@
+{% macro render(piece, fields) %}
+  {% for item in fields %}
+    <dt class="o-body c-definition-list__term">{{ item.label if item.label else item.name | capitalize }}</dt>
+    {% if apos.helpers._isString(item.name) %}
+      <dd class="o-subheadline c-definition-list__detail">{{ piece[item.name] }}</dd>
+    {% elif apos.helpers._isArray(item.name) %}
+      <dd class="o-subheadline c-definition-list__detail">{{ apos.helpers.dig(piece, item.name) }}</dd>
+    {% endif %}
+  {% endfor %}
+{% endmacro %}

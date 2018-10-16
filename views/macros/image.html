@@ -1,3 +1,6 @@
-{% macro render(imageObj, options= {size: 'full', alt: 'no alt provided'} ) %}
-  <img src="{{ apos.attachments.url(imageObj.item.attachment, { size: options.size, crop: imageObj.relationship }) }}" alt="{{ options.alt }}">
+{% macro render(imageObj, options= {size: 'full', alt: false, description: false} ) %}
+  <img class="o-image" src="{{ apos.attachments.url(imageObj.item.attachment, { size: options.size, crop: imageObj.relationship }) }}" alt="{{ options.alt or imageObj.item.title }}">
+  {% if options.description === true and imageObj.item.description %}
+      <figcaption class="o-meta o-image__caption">{{ imageObj.item.description }}</figcaption>
+  {% endif %}
 {% endmacro %}

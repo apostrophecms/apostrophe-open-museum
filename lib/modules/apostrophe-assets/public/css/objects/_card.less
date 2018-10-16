@@ -1,0 +1,40 @@
+.o-cards:not(.o-cards--horizontal) {
+  display: grid;
+  height: 100%;
+  grid-template-columns: 30% 30% 30%;
+  grid-gap: 2% 5%;
+
+  .o-card {
+    margin-bottom: 4rem;
+  }
+}
+
+.o-card {
+  border: 1px solid @color-brand-primary;
+  text-decoration: none;
+  transition: @transition-ease-in-out;
+  &:hover {
+    box-shadow: @shadow
+  }
+}
+
+.o-card__info {
+  display: block;
+  color: @color-dark;
+}
+
+.o-card__content {
+  padding: 0 1.5rem 2rem;
+}
+
+.o-cards--horizontal {
+   .o-card {
+     display: flex;
+     margin-bottom: 4rem;
+     border: 0;
+     &:hover {
+       box-shadow: none;
+       img { outline: 1px solid @color-dark; }
+     }
+   }
+}

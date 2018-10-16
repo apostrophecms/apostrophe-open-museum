@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% block extraHead %}
+  {{ super() }}
+  <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>
+
+  <script>
+    window.onload = function() {
+      L.mapquest.key = '{{ apos.modules['locations'].options.mapQuest.key }}'
+      var map = L.mapquest.map('map', {
+        center: [{{ data.piece.latlng }}],
+        layers: L.mapquest.tileLayer('map'),
+        zoom: 6
+      });
+
+      L.marker([{{ data.piece.latlng }}], {
+        icon: L.mapquest.icons.marker(),
+        draggable: false
+      }).bindPopup('Denver, CO').addTo(map);
+    }
+  </script>
+{% endblock %}
+
+{% block main %}
+  <div id="map" style="height: 500px; width: 500px;">
+  </div>
+{% endblock %}

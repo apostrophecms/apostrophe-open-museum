@@ -14,7 +14,9 @@
   "license": "MIT",
   "dependencies": {
     "apostrophe": "^2.47.0",
-    "lorem-ipsum": "^1.0.6"
+    "latlng": "^1.0.0",
+    "lorem-ipsum": "^1.0.6",
+    "node-geocoder": "^3.22.0"
   },
   "nodemonConfig": {
     "verbose": true,

@@ -1,28 +1,3 @@
-.c-artworks-cards:not(.c-artworks-cards--horizontal) {
-  display: grid;
-  height: 100%;
-  grid-template-columns: 30% 30% 30%;
-  grid-gap: 2% 5%;
-
-  .c-artworks-card {
-    margin-bottom: 4rem;
-  }
-}
-
-.c-artworks-card {
-  border: 1px solid @color-brand-primary;
-  text-decoration: none;
-  transition: @transition-ease-in-out;
-  &:hover {
-    box-shadow: @shadow
-  }
-}
-
-.c-artworks-card__info {
-  display: block;
-  color: @color-dark;
-}
-
 .c-artworks-card__media {
   position: relative;
   height: 35rem;
@@ -38,35 +13,22 @@
     margin: auto;
   }
 }
-
-.c-artworks-card__content {
-  padding: 0 1.5rem 2rem;
-}
-
+.c-artist-card__content { padding: 1.5rem; }
 .c-artworks-card__title { margin-bottom: 0.5rem; }
 .c-artworks-card__artist { margin-bottom: 2rem; }
 
-.c-artworks-cards--horizontal {
-   .c-artworks-card {
-     display: flex;
-     margin-bottom: 4rem;
-     border: 0;
-     &:hover {
-       box-shadow: none;
-       img { outline: 1px solid @color-dark; }
-     }
-   }
-   .c-artworks-card__media {
-     height: auto;
-     width: 35rem;
-     margin-bottom: none;
-     img {
-       position: relative;
-       max-height: none;
-       top: auto;
-       right: auto;
-       bottom: auto;
-       left: auto;
-     }
-   }
+.o-cards--horizontal {
+  .c-artworks-card__media {
+    height: auto;
+    width: 25rem;
+    margin-bottom: none;
+    img {
+      position: relative;
+      max-height: none;
+      top: auto;
+      right: auto;
+      bottom: auto;
+      left: auto;
+    }
+  }
 }
