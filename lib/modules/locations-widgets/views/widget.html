@@ -1,0 +1,18 @@
+{% set w = data.widget %}
+
+<div class="o-container c-location-widget">
+  <ul class="c-location-widget__addresses-items">
+    {% for item in w._locations %}
+      <li class="o-body c-location-widget__addresses-item">
+        <p>
+          {{ item.title }}<br/>
+          {{ item.streetName }}<br/>
+          {{ item.city }}, {{ item.stateCode }} {{ item.zipCode }}
+          {{ apos.log(item.address) }}
+        </p>
+        <a class="c-location-widget__directions" target="_blank" href="http://google.com/maps/place/{{ item.address }}">Directions</a>
+      </li>
+    {% endfor %}
+  </ul>
+  <div class="c-location-widget__map" data-location-widget></div>
+</div>

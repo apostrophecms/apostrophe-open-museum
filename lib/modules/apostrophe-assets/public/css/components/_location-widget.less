@@ -1,0 +1,37 @@
+.c-location-widget {
+  display: flex;
+  border: 1px solid @color-brand-primary;
+}
+
+.c-location-widget__addresses-items {
+  width: 30%;
+  padding: 4rem 5rem;
+  border-right: 1px solid @color-brand-primary;
+  list-style-type: upper-alpha;
+  font-weight: strong;
+  p {
+    font-weight: normal;
+    padding-left: 1rem;
+  }
+}
+
+.c-location-widget__addresses-item {
+  margin-bottom: 2rem;
+}
+
+.c-location-widget__map {
+  width: 70%;
+  height: 40rem;
+}
+
+a.c-location-widget__directions {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 1rem;
+  text-decoration: none;
+  color: @color-dark;
+  &:hover {
+    background-color: @color-dark;
+    color: @color-white;
+  }
+}
