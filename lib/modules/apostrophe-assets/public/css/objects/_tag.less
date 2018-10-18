@@ -10,14 +10,14 @@
 .o-tag {
   display: inline-block;
   text-decoration: none;
-  font-size: @font-size-meta;
+  font-size: 1rem;
   background-color: @color-light;
   border: 1px solid @color-brand-primary;
   color: @color-brand-primary;
   font-family: @font-family-body;
   text-transform: uppercase;
-  padding: 1rem;
+  padding: 0.5rem 0.75rem;
   transition: @transition-ease-in-out;
   &:hover { border-color: @color-light; }
-  &:active { border-color: @color-brand-primary; background-color: @color-brand-primary; color: @color-white; }
+  &:active, &.o-tag--active { border-color: @color-brand-primary; background-color: @color-brand-primary; color: @color-white; }
 }

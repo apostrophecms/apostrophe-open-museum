@@ -1,0 +1,28 @@
+{% import 'macros/svgs.html' as svgs %}
+
+{% macro render(options) %}
+  <div class="o-field-container o-field-container--multirange">
+    <label class="o-field-label">Filter by Year</label>
+    <div class="c-popup c-multirange" data-popup data-multirange>
+      <div class="o-body c-multirange__display" data-multirange-display data-popup-open></div>
+      <div class="c-popup__window c-multirange__popup" data-popup-window>
+        <div class="c-multirange__header">
+          <button class="c-multirange__all" data-multirange-all>All Eras</button>
+          <button class="c-multirange__close" data-popup-close>{{ svgs.x('#000000') }}</button>
+        </div>
+        <div class="c-multirange__main">
+          <div class="c-multirange__wrapper">
+            <input type="hidden" name="eraMin" id="eraMin" class="c-multirange__ghost-input" data-multirange-ghost-min>
+            <input type="hidden" name="eraMax" id="eraMax" class="c-multirange__ghost-input" data-multirange-ghost-max>
+            <input type="range" data-multirange-input multiple min="{{ options.min.value }}" max="{{ options.max.value }}" value="{{ options.min.value }},{{ options.max.value}}" />
+          </div>
+          <button class="o-tag o-tag--active c-tag-picker__submit" data-multirange-submit>Filter</button>
+        </div>
+        <div class="o-color-brand-primary c-multirange__labels">
+          <span class="c-multirange__label c-multirange__label--min">{{ options.min.label }}</span>
+          <span class="c-multirange__label c-multirange__label--max">{{ options.max.label }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endmacro %}

@@ -1,0 +1,7 @@
+{% macro render(tags) %}
+  <ul class="o-tag-list">
+    {% for tag in tags %}
+      <li><button class="o-tag" value="{{ tag.value }}" >{{ tag.label }}</button></li>
+    {% endfor %}
+  </ul>
+{% endmacro %}

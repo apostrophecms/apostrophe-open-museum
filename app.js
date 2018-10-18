@@ -49,6 +49,10 @@ var apos = require('apostrophe')({
     'artworks-pages': {},
     'artworks-widgets': {},
 
+    'articles': { extend: 'apostrophe-blog' },
+    'articles-pages': {},
+    'articles-widgets': {},
+
     // Content Widgets
     'image-widgets': {},
     'slideshow-widgets': {},
