@@ -6,8 +6,10 @@
 
 {% block main %}
   {{ masthead.render(data.page) }}
-  <div class="o-container o-container--medium">
+  <div class="o-container">
     {{ filters.render(data.piecesFilters) }}
+  </div>
+  <div class="o-container o-container--medium">
     {{ cards.render(data.pieces) }}
     <div class="c-pager">
       {{ pager.render({ page: data.currentPage, total: data.totalPages }, data.url) }}

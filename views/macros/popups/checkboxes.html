@@ -1,0 +1,32 @@
+{% import 'macros/svgs.html' as svgs %}
+{% macro render(label, key, data) %}
+  <div class="o-field-container o-field-container--checkboxes">
+    <div class="c-popup c-checkboxes" data-popup data-checkboxes>
+      <label class="o-field-label">{{ label }}</label>
+      <div class="o-body c-checkboxes__display" data-popup-open>
+        <span data-checkboxes-display>None Selected</span>
+        {{ svgs.chevronDown() }}
+      </div>
+      <div class="c-popup__window c-checkboxes__popup" data-popup-window>
+        <div class="c-checkboxes__header">
+          <div class="c-checkboxes__left">
+            <button class="c-checkboxes__all" data-checkboxes-all>Select All</button>
+            <button class="c-checkboxes__clear" data-checkboxes-clear>Clear</button>
+          </div>
+          <div class="c-checkboxes__right">
+            <button class="c-checkboxes__close" data-popup-close>{{ svgs.x('#000000') }}</button>
+          </div>
+        </div>
+        <div class="c-checkboxes__main">
+          {% for item in data %}
+            <div class="o-field-container o-field-container--checkbox">
+              <input class="o-field-input o-field-input--checkbox" name="{{ key }}" id="{{ item.value }}" value="{{ item.value }}" type="checkbox">
+              <div class="o-field-input-checkbox-ui"></div>
+              <label for="{{ item.value }}" class="o-field-label">{{ item.label }}</label>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endmacro %}

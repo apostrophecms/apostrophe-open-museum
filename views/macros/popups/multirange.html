@@ -4,7 +4,10 @@
   <div class="o-field-container o-field-container--multirange">
     <label class="o-field-label">Filter by Year</label>
     <div class="c-popup c-multirange" data-popup data-multirange>
-      <div class="o-body c-multirange__display" data-multirange-display data-popup-open></div>
+      <div class="o-body c-multirange__display" data-popup-open>
+        <span data-multirange-display></span>
+        {{ svgs.chevronDown() }}
+      </div>
       <div class="c-popup__window c-multirange__popup" data-popup-window>
         <div class="c-multirange__header">
           <button class="c-multirange__all" data-multirange-all>All Eras</button>
@@ -16,7 +19,7 @@
             <input type="hidden" name="eraMax" id="eraMax" class="c-multirange__ghost-input" data-multirange-ghost-max>
             <input type="range" data-multirange-input multiple min="{{ options.min.value }}" max="{{ options.max.value }}" value="{{ options.min.value }},{{ options.max.value}}" />
           </div>
-          <button class="o-tag o-tag--active c-tag-picker__submit" data-multirange-submit>Filter</button>
+          {# <button class="o-tag o-tag--active c-tag-picker__submit" data-multirange-submit>Filter</button> #}
         </div>
         <div class="o-color-brand-primary c-multirange__labels">
           <span class="c-multirange__label c-multirange__label--min">{{ options.min.label }}</span>
