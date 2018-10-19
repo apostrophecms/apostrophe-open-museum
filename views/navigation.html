@@ -11,11 +11,16 @@
   </a>
   <ul class="c-navigation__items">
     {% for tab in home._children %}
-      <li class=" c-navigation__item
+      <li class="c-navigation__item
         {% if currentPage and (apos.pages.isAncestorOf(tab, currentPage) or tab._id == currentPage._id) %}
           c-navigation__item--active
         {% endif %}
       "><a class="o-body c-navigation__link" href="{{ tab._url }}">{{ tab.title }}</a></li>
     {% endfor %}
+    <li class="c-navigation__item">
+      <a class="o-icon c-navigation__link" href="/search">
+        {{ svgs.search() }}
+      </a>
+    </li>
   </ul>
 {% endmacro %}

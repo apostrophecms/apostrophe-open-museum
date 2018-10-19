@@ -10,8 +10,8 @@
       <div class="c-popup__window c-checkboxes__popup" data-popup-window>
         <div class="c-checkboxes__header">
           <div class="c-checkboxes__left">
-            <button class="c-checkboxes__all" data-checkboxes-all>Select All</button>
-            <button class="c-checkboxes__clear" data-checkboxes-clear>Clear</button>
+            <button class="c-popup__button c-checkboxes__all" data-checkboxes-all>Select All</button>
+            <button class="c-popup__button c-checkboxes__clear" data-checkboxes-clear>Clear</button>
           </div>
           <div class="c-checkboxes__right">
             <button class="c-checkboxes__close" data-popup-close>{{ svgs.x('#000000') }}</button>
@@ -25,6 +25,9 @@
               <label for="{{ item.value }}" class="o-field-label">{{ item.label }}</label>
             </div>
           {% endfor %}
+          {% if data.length === 0 %}
+              <div class="c-checkboxes__empty">No filters available</div>
+          {% endif %}
         </div>
       </div>
     </div>

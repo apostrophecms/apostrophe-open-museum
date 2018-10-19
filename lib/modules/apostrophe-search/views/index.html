@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% import 'apostrophe-templates:macros/breadcrumbs.html' as breadcrumbs %}
+{% import 'apostrophe-templates:macros/searchbar.html' as searchbar %}
+
+{% set page = data.page %}
+
+{% block main %}
+  <div class="o-wrapper o-page c-search-page">
+    <div class="c-search-page__background">
+      {{ apos.singleton(page, 'background', 'apostrophe-images',  {
+        controls: {
+          position: 'top-right'
+        },
+        template: 'background'
+      }) }}
+    </div>
+    <div class="o-container o-container--medium c-search-page__content">
+      {{ breadcrumbs.render(data.page) }}
+      <h1 class="o-title c-search-page__title">Search all content</h1>
+      {{ searchbar.render() }}
+      <div class="c-search-page__suggested">
+        <p class="o-body c-search-page__suggested-text">Here are some useful pages you might be looking for:</p>
+        {{ apos.singleton(page, 'suggestedLinks', 'link', {}) }}
+      </div>
+    </div>
+  </div>
+{% endblock %}

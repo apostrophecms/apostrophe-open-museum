@@ -1,0 +1,13 @@
+{% import 'apostrophe-templates:macros/svgs.html' as svgs %}
+
+{% macro render(args) %}
+  <div class="c-searchbar">
+    <form>
+      <label class="c-searchbar__label" for="search">Search the Site</label>
+      <div class="c-searchbar__icon">
+        {{ svgs.search() }}
+      </div>
+      <input type="text" placeholder="Search" name="search" id="search" class="o-body c-searchbar__input">
+    </form>
+  </div>
+{% endmacro %}
