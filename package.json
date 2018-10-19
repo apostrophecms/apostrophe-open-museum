@@ -15,6 +15,7 @@
   "dependencies": {
     "apostrophe": "^2.47.0",
     "apostrophe-blog": "^2.1.2",
+    "apostrophe-events": "^2.1.3",
     "latlng": "^1.0.0",
     "lorem-ipsum": "^1.0.6",
     "node-geocoder": "^3.22.0"

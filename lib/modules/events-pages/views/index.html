@@ -1,14 +1,14 @@
 {% extends 'layout.html' %}
 {% import 'macros/masthead.html' as masthead %}
 {% import 'macros/generic-filters.html' as filters %}
+{% import 'macros/generic-card.html' as cards %}
 {% import 'apostrophe-pager:macros.html' as pager %}
 
 {% block main %}
   {{ masthead.render(data.page) }}
-  <div class="o-container o-container--narrow c-article-page">
-    {{ apos.log(data.piecesFilters) }}
+  <div class="o-container o-container--narrow c-event-page">
     {{ filters.render(data.piecesFilters) }}
-    {# {{ cards.render(data.pieces) }} #}
+    {{ cards.render(data.pieces, { schema: ['startDate', 'tags'] }) }}
     <div class="c-pager">
       {{ pager.render({ page: data.currentPage, total: data.totalPages }, data.url) }}
     </div>
