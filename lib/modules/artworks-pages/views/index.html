@@ -1,14 +1,32 @@
 {% extends 'layout.html' %}
 {% import 'macros/masthead.html' as masthead %}
-{% import 'macros/artwork-filters.html' as filters %}
 {% import 'macros/artwork-cards.html' as cards %}
 {% import 'apostrophe-pager:macros.html' as pager %}
 
+{% import 'macros/filters/search.html' as search %}
+{% import 'macros/filters/tag-picker.html' as tags %}
+{% import 'macros/filters/submit.html' as submit %}
+{% import 'macros/filters/multirange.html' as multirange %}
+{% import 'macros/filters/checkboxes.html' as checkboxes %}
+
 {% block main %}
   {{ masthead.render(data.page) }}
-  <div class="o-container">
-    {{ filters.render(data.piecesFilters) }}
-  </div>
+  <form class="o-container o-container--narrow c-filters c-generic-filters">
+    {{ search.render('Artwork') }}
+    {{ multirange.render({
+      min: {
+        value: 1400,
+        label: '1400 CE'
+      },
+      max: {
+        value: 2018,
+        label: '2018 CE'
+      }
+    })}}
+    {{ checkboxes.render('Object Type', 'objectType', data.piecesFilters.objectType) }}
+    {{ checkboxes.render('Location', 'location', data.piecesFilters.location) }}
+    {{ submit.render() }}
+  </form>
   <div class="o-container o-container--medium">
     {{ cards.render(data.pieces) }}
     <div class="c-pager">

@@ -15,11 +15,11 @@
 {% endmacro %}
 
 {% macro cards(arr, options) %}
-    <div class="o-cards {% if options.class %} {{ options.class }}{% endif %}">
-      {% for item in arr %}
-        {{ card(item) }}
-      {% endfor %}
-    </div>
+  <div class="o-cards {% if options.class %} {{ options.class }}{% endif %}">
+    {% for item in arr %}
+      {{ card(item) }}
+    {% endfor %}
+  </div>
 {% endmacro %}
 
 {% macro render(data, options) %}

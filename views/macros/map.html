@@ -5,7 +5,9 @@
       {{ data.title }} <br/>
       {{ data.streetName }} <br/>
       {{ data.city }}, {{ data.stateCode }} {{ data.zipCode }}
+      <a class="c-location-widget__directions" target="_blank" href="http://google.com/maps/place/{{ data.address }}">Directions</a>
     </address>
+    
     <div class="c-map__canvas" data-map="{{ data.latlng | dump }}" data-mq-key="{{ apos.helpers.getMapquestKey() }}"></div>
   </div>
 {% endmacro %}

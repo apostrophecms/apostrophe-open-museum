@@ -11,14 +11,12 @@
     </select>
     <div class="c-popup c-tag-picker" data-tag-picker data-popup>
       <div class="c-tag-picker__display" data-tag-picker-display data-popup-open>
-        <button class="o-tag o-tag--active c-tag-picker__submit" data-tag-picker-submit>Filter</button>
       </div>
       <div class="c-popup__window c-tag-picker__tags" data-popup-window>
         <div class="c-tag-picker__header">
           <button class="c-tag-picker__clear" data-tag-picker-clear>Clear</button>
           <button class="c-tag-picker__close" data-tag-picker-close data-popup-close>{{ svgs.x('#000000') }}</button>
         </div>
-
         <ul class="o-tag-list">
           {% for tag in tags %}
             <li><button data-tag-picker-selected="false" class="o-tag" value="{{ tag.value }}" >{{ tag.label }}</button></li>

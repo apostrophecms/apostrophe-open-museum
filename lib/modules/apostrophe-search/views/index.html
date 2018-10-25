@@ -1,27 +1,34 @@
 {% extends "layout.html" %}
-{% import 'apostrophe-templates:macros/breadcrumbs.html' as breadcrumbs %}
+{% import 'apostrophe-templates:macros/masthead.html' as masthead %}
 {% import 'apostrophe-templates:macros/searchbar.html' as searchbar %}
-
+{% import 'apostrophe-templates:macros/generic-cards.html' as genericCards %}
+{% import 'apostrophe-templates:macros/artist-cards.html' as artistCards %}
+{% import 'apostrophe-templates:macros/artwork-cards.html' as artworkCards %}
+{% set types = apos.modules['apostrophe-search'].options.types %}
 {% set page = data.page %}
 
 {% block main %}
-  <div class="o-wrapper o-page c-search-page">
-    <div class="c-search-page__background">
-      {{ apos.singleton(page, 'background', 'apostrophe-images',  {
-        controls: {
-          position: 'top-right'
-        },
-        template: 'background'
-      }) }}
-    </div>
-    <div class="o-container o-container--medium c-search-page__content">
-      {{ breadcrumbs.render(data.page) }}
-      <h1 class="o-title c-search-page__title">Search all content</h1>
-      {{ searchbar.render() }}
-      <div class="c-search-page__suggested">
-        <p class="o-body c-search-page__suggested-text">Here are some useful pages you might be looking for:</p>
-        {{ apos.singleton(page, 'suggestedLinks', 'link', {}) }}
-      </div>
+  {{ masthead.render(data.page, { title: 'Search results for ‘' + data.query.search + '’', search: data.query.search } ) }}
+
+  <div class="o-wrapper o-page c-search-results-page">
+    
+    <div class="o-container o-container--medium c-search-results-page__content">
+      {% for type in types %}
+        {% if data.docs[type] %}
+          <h2 class="o-section-header c-search-result__header">Related {{ type | capitalize }}s</h2>
+          <div class="c-search-result__group"> 
+            {% if type === 'artwork' %}
+              {{ artworkCards.render(data.docs[type]) }}
+            {% elif type === 'artist' %}
+              {{ artistCards.render(data.docs[type]) }}
+            {% else %}
+              {{ genericCards.render(data.docs[type], {
+                schema: ['title', 'startDate', 'publishedDate', 'tags', { label: 'Date: ', field: 'year' } ]
+              }) }}
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endfor %}
     </div>
   </div>
 {% endblock %}

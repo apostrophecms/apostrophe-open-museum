@@ -5,7 +5,7 @@
 
 {% block main %}
   {{ masthead.render(data.piece, { media: true, page: data.page, type: 'event' }) }}
-  <div class="o-container o-container--narrow c-event-page">
+  <div class="o-container o-container--large c-event-page">
     <div class="c-event-page__body">
       <div class="c-event-page__body-content">
         {{ apos.area(piece, 'body', { widgets: apos.helpers.narrowWidgets }) }}

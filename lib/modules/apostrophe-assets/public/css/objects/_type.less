@@ -2,7 +2,8 @@
 .o-section-header,
 .o-headline,
 .o-subheadline,
-.o-meta {
+.o-meta,
+.o-pull-quote {
   font-family: @font-family-display;
 }
 
@@ -11,14 +12,16 @@
 .o-headline,
 .o-subheadline,
 .o-lede,
-.o-meta {
+.o-meta,
+.o-pull-quote {
   line-height: 125%
 }
 
 .o-title,
 .o-section-header,
 .o-headline,
-.o-subheadline {
+.o-subheadline,
+.o-pull-quote {
   font-weight: 700
 }
 
@@ -26,8 +29,13 @@
   font-size: @font-size-title;
 }
 
-.o-section-header {
+.o-section-header,
+.o-pull-quote {
   font-size: @font-size-section-header;
+}
+
+.o-pull-quote {
+  color: @color-brand-primary;
 }
 
 .o-headline {

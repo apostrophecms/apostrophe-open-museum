@@ -1,13 +1,20 @@
 {% extends 'layout.html' %}
 {% import 'macros/masthead.html' as masthead %}
-{% import 'macros/generic-filters.html' as filters %}
-{% import 'macros/generic-card.html' as cards %}
+{% import 'macros/generic-cards.html' as cards %}
 {% import 'apostrophe-pager:macros.html' as pager %}
+
+{% import 'macros/filters/search.html' as search %}
+{% import 'macros/filters/tag-picker.html' as tags %}
+{% import 'macros/filters/submit.html' as submit %}
 
 {% block main %}
   {{ masthead.render(data.page) }}
+  <form class="o-container o-container--narrow c-filters c-generic-filters">
+    {{ search.render('Events') }}
+    {{ tags.render(data.piecesFilters.tags) }}
+    {{ submit.render() }}
+  </form>
   <div class="o-container o-container--narrow c-event-page">
-    {{ filters.render(data.piecesFilters) }}
     {{ cards.render(data.pieces, { schema: ['startDate', 'tags'] }) }}
     <div class="c-pager">
       {{ pager.render({ page: data.currentPage, total: data.totalPages }, data.url) }}

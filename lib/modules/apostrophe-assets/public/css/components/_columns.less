@@ -12,7 +12,8 @@
 
 
 // Column Variations
-.c-columns--two {
+.c-columns--two,
+.c-columns--two-reverse {
   .c-columns__column--0 {
     width: 55%;
     margin-right: 13%;
@@ -20,6 +21,14 @@
   .c-columns__column--1 {
     width: 32%;
   }
+}
+
+.c-columns--two-reverse {
+  .c-columns__inner {
+    flex-direction: row-reverse;
+  }
+  .c-columns__column--0 { margin-right: 0; }
+  .c-columns__column--1 { margin-right: 13%; }
 }
 
 .c-columns--three {

@@ -61,6 +61,7 @@ var apos = require('apostrophe')({
     'marquee-widgets': {},
     'feature-widgets': { extend: 'marquee-widgets' },
     'two-panel-widgets': {},
+    'content-widgets': {},
 
     // Layout Widgets
     'columns-widgets': {}

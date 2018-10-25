@@ -12,7 +12,7 @@
   {% set config = 'two' %}
 {% endif %}
 
-{% if config === 'two' %}
+{% if config === 'two' or config === 'two-reverse' %}
   {% set columns = 2 %}
 {% elif  config === 'three' %}
   {% set columns = 3 %}

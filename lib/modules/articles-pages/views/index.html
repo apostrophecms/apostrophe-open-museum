@@ -1,16 +1,26 @@
 {% extends 'layout.html' %}
 {% import 'macros/masthead.html' as masthead %}
-{% import 'macros/generic-filters.html' as filters %}
+{% import 'macros/generic-cards.html' as cards %}
 {% import 'apostrophe-pager:macros.html' as pager %}
+
+{% import 'macros/filters/search.html' as search %}
+{% import 'macros/filters/tag-picker.html' as tags %}
+{% import 'macros/filters/submit.html' as submit %}
 
 {% block main %}
   {{ masthead.render(data.page) }}
+  <form class="o-container o-container--narrow c-filters c-generic-filters">
+    {{ search.render('Articles') }}
+    {{ tags.render(data.piecesFilters.tags) }}
+    {{ submit.render() }}
+  </form>
   <div class="o-container o-container--narrow c-article-page">
-    {{ apos.log(data.piecesFilters) }}
-    {{ filters.render(data.piecesFilters) }}
-    {# {{ cards.render(data.pieces) }} #}
+    {{ cards.render(data.pieces, {
+      schema: ['title', 'publishedAt', 'tags']
+    }) }}
     <div class="c-pager">
       {{ pager.render({ page: data.currentPage, total: data.totalPages }, data.url) }}
     </div>
   </div>
 {% endblock %}
+

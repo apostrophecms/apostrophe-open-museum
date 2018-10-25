@@ -1,0 +1,11 @@
+{% set w = data.widget %}
+{% import 'macros/generic-cards.html' as cards %}
+<div class="o-container o-container--narrow c-content-widget">
+  {% if w.headline %}
+    <h4 class="o-headline o-color-brand-primary c-content-widget__headline">{{ w.headline }}</h4>
+  {% endif %}
+  {{ cards.render( w._content, { 
+    class: 'o-cards--horizontal c-content-widget__items',
+    schema: [ { class: 'o-meta', field: 'type' }, 'title', 'startDate', 'publishedDate', 'tags', { label: 'Date: ', field: 'year' } ]
+  }) }}
+</div>

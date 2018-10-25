@@ -1,6 +1,13 @@
 {% macro render(imageObj, options= {size: 'full', alt: false, description: false} ) %}
-  <img class="o-image" src="{{ apos.attachments.url(imageObj.item.attachment, { size: options.size, crop: imageObj.relationship }) }}" alt="{{ options.alt or imageObj.item.title }}">
-  {% if options.description === true and imageObj.item.description %}
-      <figcaption class="o-meta o-image__caption">{{ imageObj.item.description }}</figcaption>
+  {% if imageObj.item.attachment === undefined %}
+    <img class="o-image" src="https://via.placeholder.com/300x200" alt="{{ options.alt or imageObj.item.title }}">
+  {% else %}
+    <img class="o-image" src="{{ apos.attachments.url(imageObj.item.attachment, { size: options.size, crop: imageObj.relationship }) }}" alt="{{ options.alt or imageObj.item.title }}">
+    {% if options.description === true and imageObj.item.description %}
+        <figcaption class="o-meta o-image__caption">{{ imageObj.item.description }}</figcaption>
+    {% endif %}
+    {% if apos.helpers._isString(options.description) %}
+      <figcaption class="o-meta o-image__caption">{{ options.description }}</figcaption>
+    {% endif %}
   {% endif %}
 {% endmacro %}
