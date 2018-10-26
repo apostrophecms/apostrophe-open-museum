@@ -7,19 +7,31 @@
 {% block title %}
   {# Create a useful, SEO-friendly title tag based on what we have #}
   {% if data.piece %}
-    {{ data.piece.title }}
+    {{ data.piece.title }} | Open Museum
   {% elseif data.page %}
-    {{ data.page.title }}
+    {{ data.page.title }} | Open Museum
   {% else %}
     {{ apos.log('Looks like you forgot to override the title block in a template that does not have access to an Apostrophe page or piece.') }}
   {% endif %}
 {% endblock %}
 
 {% block extraHead %}
-  {#
-    This block outputs its contents in the HTML document's <head>.
-    It is a good place to put extra <script> <link> and <meta> tags.
-  #}
+  {% if data.piece %}
+    {% if data.piece.seoTitle %}
+      {% set title = data.piece.seoTitle %}
+    {% else %}
+      {% set title = data.piece.title %}
+    {% endif %}
+  {% else %}
+    {% if data.page.seoTitle %}
+      {% set title = data.page.seoTitle %}
+    {% else %}
+      {% set title = data.page.title %}
+    {% endif %}
+  {% endif %}
+
+  {% include "apostrophe-open-graph:view.html" %}
+  {% include "apostrophe-seo:view.html" %}
 {% endblock %}
 
 {% block beforeMain %}
