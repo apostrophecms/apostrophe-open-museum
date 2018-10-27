@@ -26,6 +26,7 @@ var apos = require('apostrophe')({
     'styleguide': {},
     'apostrophe-seo': {},
     'apostrophe-open-graph': {},
+    'apostrophe-pieces-import': {},
 
     // Pages
     'default-pages': {},
@@ -43,7 +44,9 @@ var apos = require('apostrophe')({
     'locations-pages': {},
     'locations-widgets': {},
 
-    'artworks': {},
+    'artworks': {
+      import: true
+    },
     'artworks-pages': {},
     'artworks-widgets': {},
 

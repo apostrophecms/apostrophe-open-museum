@@ -1,0 +1,9 @@
+{%- extends "managerModalBase.html" -%}
+{%- import "piecesMacros.html" as pieces with context -%}
+{%- import "piecesImportMacros.html" as piecesImport with context -%}
+{%- import 'apostrophe-ui:components/buttons.html' as buttons with context -%}
+
+{%- block controls -%}
+  {{ buttons.minor('Import', { action: 'import-' + data.options.name }) }}
+  {{ pieces.manageControls() }}
+{%- endblock -%}
