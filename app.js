@@ -27,6 +27,9 @@ var apos = require('apostrophe')({
     'apostrophe-seo': {},
     'apostrophe-open-graph': {},
     'apostrophe-pieces-import': {},
+    'apostrophe-assets': {
+      // minify: true
+    },
 
     // Pages
     'default-pages': {},
@@ -53,6 +56,7 @@ var apos = require('apostrophe')({
     'articles': { extend: 'apostrophe-blog' },
     'articles-pages': {},
     'articles-widgets': {},
+    'articles-featured-widgets': {},
 
     'events': { extend: 'apostrophe-events' },
     'events-pages': {},

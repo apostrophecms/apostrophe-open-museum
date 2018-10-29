@@ -8,7 +8,9 @@
 {% import 'macros/filters/submit.html' as submit %}
 
 {% block main %}
-  {{ masthead.render(data.page) }}
+  {{ masthead.render(data.page, { class: 'o-mb-0' }) }}
+  {{ apos.singleton(data.page, 'featured', 'articles-featured') }}
+
   <form class="o-container o-container--narrow c-filters c-generic-filters">
     {{ search.render('Articles') }}
     {{ tags.render(data.piecesFilters.tags) }}

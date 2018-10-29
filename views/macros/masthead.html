@@ -4,7 +4,7 @@
 {% import "apostrophe-templates:macros/searchbar.html" as searchbar %}
 
 {% macro render(page, options={}) %}
-  <div class="o-background-light c-masthead {% if options.media %}c-masthead--has-media{% endif %}">
+  <div class="o-background-light c-masthead {% if options.media %}c-masthead--has-media{% endif %}{% if options.class %}{{ options.class }}{% endif %}">
     <div class="o-container c-masthead__inner">
       <div class="c-masthead__content">
         {% if options.page %}

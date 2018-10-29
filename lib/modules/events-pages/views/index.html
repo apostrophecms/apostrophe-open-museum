@@ -15,7 +15,7 @@
     {{ submit.render() }}
   </form>
   <div class="o-container o-container--narrow c-event-page">
-    {{ cards.render(data.pieces, { schema: ['startDate', 'tags'] }) }}
+    {{ cards.render(data.pieces, { schema: ['title', 'startDate', 'tags'] }) }}
     <div class="c-pager">
       {{ pager.render({ page: data.currentPage, total: data.totalPages }, data.url) }}
     </div>
