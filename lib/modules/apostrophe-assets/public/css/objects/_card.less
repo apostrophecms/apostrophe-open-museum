@@ -2,7 +2,10 @@
   display: grid;
   grid-template-columns: 30% 30% 30%;
   grid-gap: 7rem 5%;
-
+  @media @breakpoint-small { 
+    grid-template-columns: 100%;
+    grid-gap: 2rem 0;
+  }
   .o-card {
     margin-bottom: 4rem;
   }

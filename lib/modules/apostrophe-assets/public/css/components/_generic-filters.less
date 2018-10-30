@@ -9,3 +9,18 @@
 .c-generic-filters .o-field-container--tags {
   width: 60%;
 }
+
+.c-generic-filters {
+  @media @breakpoint-mid {
+    flex-direction: column;
+    .o-field-container {
+      margin-right: 0;
+      width: 100%;
+      margin-bottom: 3rem;
+    }
+    .c-filters__submit {
+      display: block;
+      width: 100%;
+    }
+  }
+}

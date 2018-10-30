@@ -45,4 +45,27 @@
     margin-right: 8%;
     width: 18%;
   }
+  @media @breakpoint-medium {
+
+    .c-columns__inner { flex-direction: column; }
+    .c-columns__column--0,
+    .c-columns__column--1,
+    .c-columns__column--2 {
+      margin-left: 0;
+      width: 100%;
+      margin-right: 0;
+    }
+  }
+}
+
+.c-columns__inner {
+  @media @breakpoint-small {
+    flex-direction: column;
+    .c-columns__column--0,
+    .c-columns__column--1,
+    .c-columns__column--2 {
+      width: 100%;
+      margin-right: 0;
+    }
+  }
 }

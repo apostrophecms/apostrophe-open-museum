@@ -1,0 +1,23 @@
+.c-navigation__mobile-trigger {
+  color: #00f;
+  -webkit-appearance: none;
+  background: 0 0;
+  border: none;
+  display: none;
+  position: relative;
+  z-index: 2;
+  @media @breakpoint-medium {
+    display: block;  
+  }
+}
+
+.c-navigation__mobile-trigger__stroke {
+  position: relative;
+  height: 3px;
+  width: 30px;
+  background-color: @color-dark;
+  transition: all .35s cubic-bezier(0,.82,1,1.43);
+  &:not(:last-child) {
+    margin-bottom: 6px;
+  }
+}

@@ -1,11 +1,10 @@
 {% import 'macros/svgs.html' as svgs %}
 
 {% macro render(apos, home, currentPage, images, options) %}
-  {% set logoObj = apos.helpers._shuffle(images.items[0]._pieces)[0] %}
-  {% set logoUrl = apos.attachments.url(logoObj.item.attachment, { size: 'full', crop: logoObj.relationship })  %}
+  {% set paths = apos.helpers.getPaths(apos.helpers._shuffle(images.items[0]._pieces)) %}
   <a href="/" class="c-navigation__logo">
     <span class="c-navigation__logo-mask">
-      {{ svgs.logoMask(logoUrl) }}
+      {{ svgs.logoMask(paths) }}
     </span>
     {{ svgs.logoType() }}
   </a>
@@ -21,10 +20,21 @@
     {% endfor %}
     {% if options.search %}
       <li class="c-navigation__item">
-        <a class="o-icon c-navigation__link" href="/search">
+        <a class="o-icon o-body c-navigation__link" href="/search">
           {{ svgs.search() }}
+          <span class="c-navigation__mobile-label" >Search</span>
         </a>
       </li>
     {% endif %}
   </ul>
+  {% if options.mobile %}
+    <button class="c-navigation__mobile-trigger" data-mobile-trigger>
+      <div class="c-navigation__mobile-trigger__stroke c-navigation__mobile-trigger__stroke--top"></div>
+      <div class="c-navigation__mobile-trigger__stroke c-navigation__mobile-trigger__stroke--middle"></div>
+      <div class="c-navigation__mobile-trigger__stroke c-navigation__mobile-trigger__stroke--bottom"></div>
+    </button>
+  {% endif %}
 {% endmacro %}
+
+
+

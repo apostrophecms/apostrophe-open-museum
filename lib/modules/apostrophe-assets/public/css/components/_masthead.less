@@ -3,8 +3,17 @@
   color: @color-brand-primary;
   margin-bottom: 7rem;
 
+  .c-searchbar {
+    margin-top: 2rem;
+  }
+
   .o-tag-list {
     margin-top: 1rem;
+  }
+  @media @breakpoint-medium {
+    text-align: center;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }
 
@@ -16,7 +25,11 @@
 }
 
 .c-masthead__title {
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
   max-width: 100rem;
   margin-right: 10rem;
+  @media @breakpoint-medium {
+    max-width: 100%;
+    margin-right: 0;
+  }
 }

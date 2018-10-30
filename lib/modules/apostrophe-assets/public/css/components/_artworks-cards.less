@@ -2,6 +2,10 @@
   position: relative;
   height: 35rem;
   margin-bottom: 3rem;
+
+  @media @breakpoint-medium {
+    height: auto;
+  }
   
   img {
     position: absolute;
@@ -11,6 +15,15 @@
     left: 0;
     right: 0;
     margin: auto;
+    width: auto;
+    @media @breakpoint-medium {
+      position: relative;
+      max-height: none;
+      top: auto;
+      right: auto;
+      bottom: auto;
+      left: auto;
+    }
   }
 }
 
@@ -19,11 +32,15 @@
 .c-artworks-card__artist { margin-bottom: 2rem; }
 
 .o-cards--horizontal {
+  &:hover .c-artworks-card img {
+    outline: none;
+  }
   .c-artworks-card__media {
     height: auto;
     width: 25rem;
     margin-bottom: none;
     img {
+      outline: none;
       position: relative;
       max-height: none;
       top: auto;

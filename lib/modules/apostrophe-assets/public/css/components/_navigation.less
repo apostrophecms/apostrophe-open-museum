@@ -1,5 +1,10 @@
 .c-navigation__logo {
-
+  position: relative;
+  z-index: 2;
+}
+.c-navigation__logo-mask, .c-navigation__logo{
+  color: transparent;
+  text-decoration: none;
 }
 
 .c-navigation__logo-mask svg {
@@ -7,8 +12,33 @@
   height: 31px;
 }
 
+.c-navigation__logo-mask svg image {
+  transition: opacity 0s ease;
+  position: absolute;
+  transition-delay: 0;
+}
+
+.c-navigation__logo:hover image {
+  animation: fade 1.2s infinite;
+}
+
+.c-navigation__logo:hover image:nth-child(3) { animation-delay: 2.8s }
+.c-navigation__logo:hover image:nth-child(4) { animation-delay: 2.4s }
+.c-navigation__logo:hover image:nth-child(5) { animation-delay: 2s }
+.c-navigation__logo:hover image:nth-child(6) { animation-delay: 1.6s }
+.c-navigation__logo:hover image:nth-child(7) { animation-delay: 1.2s }
+.c-navigation__logo:hover image:nth-child(8) { animation-delay: 0.8s }
+.c-navigation__logo:hover image:nth-child(9) { animation-delay: 0.4s }
+
+
+@keyframes fade {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
 .c-navigation__items {
   display: flex;
+  transition: all 0.3s ease;
 }
 
 .c-navigation__item {
@@ -30,3 +60,62 @@
   }
 }
 
+.c-header__inner .c-navigation__items {
+    @media @breakpoint-medium {
+    display: block;
+    position: absolute;
+    background: @color-white;
+    width: 100%;
+    left: 0;
+    z-index: 1;
+    padding: 12rem 4rem;
+    transform: translateY(-100%);
+    height: 100vh;
+
+    .c-navigation__link {
+      padding: 1rem 0;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.s-show-menu .c-navigation__items {
+  transform: translateY(-40px);
+}
+
+.c-navigation__mobile-label {
+  display: none;
+  @media @breakpoint-medium {
+    display: block;
+  }
+}
+
+.c-navigation__link svg {
+  @media @breakpoint-medium {
+    display: none;
+  }
+}
+
+.c-footer {
+  @media @breakpoint-medium {
+    .c-footer__inner,
+    .c-footer__nav {
+      flex-direction: column;
+    }
+    .c-footer__credit {
+      text-align: center;
+    }
+    .c-navigation__items {
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 4rem;
+    }
+    .c-navigation__logo {
+      margin-right: 0 !important;
+      margin-bottom: 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

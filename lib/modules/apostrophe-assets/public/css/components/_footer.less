@@ -1,6 +1,7 @@
 .c-footer {
   margin-top: 12rem;
-  padding: 5rem 0 10rem
+  padding: 5rem 0 10rem;
+  a { color: @color-brand-primary; }
 }
 
 .c-footer__inner {
@@ -22,6 +23,14 @@
 
 .c-footer__logo {
   display: block;
+  .logo-solid {
+    transition: all 4s ease;
+  }
+  svg:hover {
+    .logo-solid {
+      opacity: 0;
+    }
+  }
 }
 
 .c-footer__apostrophe-link {
@@ -34,3 +43,4 @@
     text-decoration: none;
   }
 }
+
