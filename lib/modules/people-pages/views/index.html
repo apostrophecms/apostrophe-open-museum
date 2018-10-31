@@ -16,7 +16,7 @@
     </button>
     <p class="o-body c-people-page__bio-box__description" data-bio-box-description></p>
     <div class="c-people-page__bio-box__role-wrapper" data-bio-box-role-wrapper>
-      <span class="o-body c-people-page__bio-box__role-header">Role in Team</span>
+      <span class="o-body c-people-page__bio-box__role-header">Role on Team</span>
       <h5 class="o-subheadline o-color-brand-primary" data-bio-box-role></h5>
     </div>
   </div>
@@ -40,7 +40,7 @@
           {{ image.render(person.thumbnail.items[0]._pieces[0], {class: 'c-people-page__grid-item__media'}) }}
           <h3 class="o-subheadline o-subheadline--alt c-people-page__grid-item__title">{{ person.title }}</h3>
         </button>
-        {% if loop.index % 4 === 0 and not loop.last %}
+        {% if (loop.index % 4 === 0) and not loop.last %}
           {{ bioBox() }}
         {% endif %}
       {% endfor %}

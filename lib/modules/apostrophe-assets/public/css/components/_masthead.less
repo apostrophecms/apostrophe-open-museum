@@ -3,6 +3,10 @@
   color: @color-brand-primary;
   margin-bottom: 7rem;
 
+  @media @breakpoint-medium {
+    padding: 3rem 0rem 4rem;
+  }
+
   .c-searchbar {
     margin-top: 2rem;
   }
@@ -14,6 +18,9 @@
     text-align: center;
     padding-left: 2rem;
     padding-right: 2rem;
+    .o-tag-list {
+      justify-content: center;
+    }
   }
 }
 
@@ -21,6 +28,9 @@
   .c-masthead__inner {
     display: flex;
     align-items: center;
+    @media @breakpoint-medium {
+      flex-direction: column-reverse
+    }
   }
 }
 
@@ -28,8 +38,20 @@
   margin-bottom: 1rem;
   max-width: 100rem;
   margin-right: 10rem;
-  @media @breakpoint-medium {
+  @media @breakpoint-mid {
     max-width: 100%;
     margin-right: 0;
+  }
+}
+
+.c-masthead__content {
+  @media @breakpoint-mid {
+    min-width: 45%;
+  }
+}
+
+.c-masthead__media {
+  @media @breakpoint-medium {
+    margin-bottom: 4rem;
   }
 }

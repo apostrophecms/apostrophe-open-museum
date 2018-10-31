@@ -9,6 +9,7 @@
 .c-people-page__grid {
   max-width: 94rem;
   display: flex;
+  align-items: baseline;
   flex-wrap: wrap;
   position: relative;
 
@@ -27,15 +28,27 @@
 .c-people-page__grid-item__media {
   margin-bottom: 1.5rem;
 }
-.c-people-page__grid-item__title {}
+.c-people-page__grid-item__title {
+  @media @breakpoint-small {
+    font-size: 1.3rem;
+  }
+}
 
 .c-people-page__bio-box__description {
   width: 58%;
   margin-right: 4%;
+  @media @breakpoint-small {
+    width: 100%;
+    margin-right: 0;
+  }
 }
 
 .c-people-page__bio-box__role-wrapper{
-  width: 38%
+  width: 38%;
+  @media @breakpoint-small {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
 }
 
 .c-people-page__bio-box__role-header {
@@ -54,6 +67,9 @@
   padding-left: 4rem;
   padding-right: 4rem;
   overflow: hidden;
+  @media @breakpoint-small {
+    flex-direction: column-reverse
+  }
 }
 
 .c-people-page__bio-box[data-bio-box="active"] {
@@ -63,6 +79,12 @@
   margin-bottom: 2rem;
   overflow: visible;
   border: 1px solid @color-brand-primary
+}
+.c-people-page__bio-box[data-bio-box="inactive"]{
+  .c-people-page__bio-box__description,
+  .c-people-page__bio-box__role-wrapper {
+    max-height: 0;
+  }
 }
 
 .c-people-page__bio-box__close {

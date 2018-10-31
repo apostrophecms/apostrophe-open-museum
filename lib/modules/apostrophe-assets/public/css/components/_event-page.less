@@ -4,13 +4,28 @@
 
 .c-event-page__body {
   display: flex;
-  justify-content: space-between
+  justify-content: space-between;
+  @media @breakpoint-small {
+    flex-direction: column;
+  }
 }
 
 .c-event-page__body-content {
   width: 50%;
+  @media @breakpoint-mid {
+    width: 55%;
+  }
+  @media @breakpoint-small {
+    width: 100%;
+  }
 }
 
 .c-event-page__location {
   width: 28%;
+  @media @breakpoint-mid {
+    width: 35%;
+  }
+  @media @breakpoint-small {
+    width: 100%;
+  }
 }
