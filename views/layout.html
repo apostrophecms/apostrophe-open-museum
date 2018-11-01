@@ -3,13 +3,14 @@
 
 {% import 'header.html' as header %}
 {% import 'footer.html' as footer %}
+{% import 'apostrophe-favicons:faviconMacros.html' as favicons %}
 
 {% block title %}
   {# Create a useful, SEO-friendly title tag based on what we have #}
   {% if data.piece %}
-    {{ data.piece.title }} | Open Museum
+    {{ data.piece.title }} | OpenMuseum
   {% elseif data.page %}
-    {{ data.page.title }} | Open Museum
+    {{ data.page.title }} | OpenMuseum
   {% else %}
     {{ apos.log('Looks like you forgot to override the title block in a template that does not have access to an Apostrophe page or piece.') }}
   {% endif %}
@@ -32,6 +33,7 @@
 
   {% include "apostrophe-open-graph:view.html" %}
   {% include "apostrophe-seo:view.html" %}
+  {{ favicons.renderLinks(apos, data.global) }}
 {% endblock %}
 
 {% block beforeMain %}

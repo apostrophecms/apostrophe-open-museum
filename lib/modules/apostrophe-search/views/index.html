@@ -4,6 +4,7 @@
 {% import 'apostrophe-templates:macros/generic-cards.html' as genericCards %}
 {% import 'apostrophe-templates:macros/artist-cards.html' as artistCards %}
 {% import 'apostrophe-templates:macros/artwork-cards.html' as artworkCards %}
+{% import 'apostrophe-pager:macros.html' as pager %}
 {% set types = apos.modules['apostrophe-search'].options.types %}
 {% set page = data.page %}
 
@@ -29,6 +30,9 @@
           </div>
         {% endif %}
       {% endfor %}
+      <div class="c-pager">
+        {{ pager.render({ page: data.currentPage, total: data.totalPages }, data.url) }}
+      </div>
     </div>
   </div>
 {% endblock %}
