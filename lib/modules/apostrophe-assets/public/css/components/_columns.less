@@ -1,5 +1,8 @@
 .c-columns__inner {
   display: flex;
+  @media @breakpoint-medium {
+    flex-direction: column;
+  }
 }
 
 .c-columns--cream { background-color: @color-brand-secondary }
@@ -8,8 +11,12 @@
 .c-columns.o-background-brand-secondary,
 .c-columns.o-background-light {
   padding: 5rem 0 10rem 0;
+  margin-top: -7rem;
 }
 
+.c-area > .apos-area > .apos-area-widgets > [data-apos-widget-wrapper="columns"]:first-child .c-columns{
+  margin-top: 0;
+}
 
 // Column Variations
 .c-columns--two,
@@ -17,18 +24,42 @@
   .c-columns__column--0 {
     width: 55%;
     margin-right: 13%;
+    @media @breakpoint-mid {
+      margin-right: 5%;
+    }
+    @media @breakpoint-medium {
+      width: 100%;
+      margin-right: 0;
+    }
   }
   .c-columns__column--1 {
     width: 32%;
+    @media @breakpoint-mid {
+      width: 40%;
+    }
+    @media @breakpoint-medium {
+      width: 100%;
+    }
   }
 }
 
 .c-columns--two-reverse {
   .c-columns__inner {
     flex-direction: row-reverse;
+    @media @breakpoint-medium {
+      flex-direction: column-reverse;
+    }
   }
   .c-columns__column--0 { margin-right: 0; }
-  .c-columns__column--1 { margin-right: 13%; }
+  .c-columns__column--1 {
+    margin-right: 13%;
+    @media @breakpoint-mid {
+      margin-right: 5%;
+    }
+    @media @breakpoint-medium {
+      margin-right: 0;
+    }
+  }
 }
 
 .c-columns--three {
@@ -45,8 +76,35 @@
     margin-right: 8%;
     width: 18%;
   }
+  @media @breakpoint-large {
+    .c-columns__column--0 {
+      margin-left: 0%;
+      margin-right: 4%;
+      width: 32%
+    }
+    .c-columns__column--1 {
+      margin-right: 4%;
+      width: 32%
+    }
+    .c-columns__column--2 {
+      margin-right: 0%;
+      width: 28%;
+    }
+  }
+  @media @breakpoint-mid {
+    .c-columns__inner { flex-wrap: wrap; }
+    .c-columns__column--0,
+    .c-columns__column--1  {
+      width: 48%
+    }
+    .c-columns__column--1 {
+      margin-right: 0;
+    }
+    .c-columns__column--2 {
+      width: 100%;
+    }
+  }
   @media @breakpoint-medium {
-
     .c-columns__inner { flex-direction: column; }
     .c-columns__column--0,
     .c-columns__column--1,
