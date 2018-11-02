@@ -1,10 +1,22 @@
 .c-artworks-widget {
   border: 1px solid @color-brand-primary;
   padding: 4rem;
+  @media @breakpoint-large {
+    // margin-left: 2rem;
+    // margin-right: 2rem;
+    border: none;
+  }
 }
 
 .c-artworks-widgets__header {
   display: flex;
   justify-content: space-between;
   margin-bottom: 4rem;
+  @media @breakpoint-medium {
+    flex-direction: column;
+    text-align: center;
+    .o-headline {
+      margin-bottom: 2rem;
+    }
+  }
 }
