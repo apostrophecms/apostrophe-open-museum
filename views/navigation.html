@@ -16,7 +16,15 @@
         {% endif %}
       "><a class="o-body c-navigation__link" href="{{ tab._url }}">
         {{ tab.title }}{% if options.arrows and tab._children.length > 0 %}{{ svgs.navArrow() }}{% endif %}
-        </a></li>
+        </a>
+        {% if tab._children.length > 0 and options.arrows %}
+          <ul class="o-body c-navigation__item__subnav" aria-label="subnav">
+          {% for child in tab._children %}
+            <li><a href="{{ child._url }}">{{ child.title }}</a></li>
+          {% endfor %}
+          </ul>
+        {% endif %}
+        </li>
     {% endfor %}
     {% if options.search %}
       <li class="c-navigation__item">
