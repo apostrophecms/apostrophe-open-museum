@@ -4,6 +4,20 @@
 
 This demo is meant to serve two main goals: The first being it is fully styled, responsive, generic website to use as a starting point for your own Apostrophe developement. The second being a demonstration of a fully featured production-ready Apostrophe build: a host of widgets (both simple and complex), networks of related content (pieces), custom content taxonomy, importing pieces, maps, advanced Apostrophe configuration, etc, all while organizing code the way we, the ApostropheCMS maintainers, do in production.
 
+## Installation
+If you've never used ApostropheCMS before you'll probably want to check out the official [Getting Started / Setting Up Your Environment](https://apostrophecms.org/docs/tutorials/getting-started/setting-up-your-environment.html) tutorial.
+
+Once you have that up and running you'll want to clone this repo and 
+
+```
+npm install
+```
+
+and then
+```
+npm start
+```
+
 ## Request for Feedback
 
 We're currently looking for feedback on what would make this a more useful demo and a more friendly repository for those just getting started with Apostrophe.

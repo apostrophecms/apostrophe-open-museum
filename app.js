@@ -54,7 +54,6 @@ const apos = require('apostrophe')({
     // Pieces
     'artists': { extend: 'apostrophe-pieces' },
     'artists-pages': { extend: 'apostrophe-pieces-pages' },
-    'artists-widgets': { extend: 'apostrophe-pieces-widgets' },
 
     'locations': { extend: 'apostrophe-pieces' },
     'locations-pages': { extend: 'apostrophe-pieces-pages' },
