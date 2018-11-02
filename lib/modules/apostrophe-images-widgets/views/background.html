@@ -1,1 +1,5 @@
-<div class="o-background-image" style="background-image:url({{ apos.attachments.url(data.widget._pieces[0].item.attachment, { size: options.size, crop: data.widget._pieces[0].relationship }) }})"></div>
+{# If we use apos.images.first to find the first image in the widget, #}
+{# that will also carry through any crop associated with it for us. #}
+{# This is safer and easier than writing data.widget._pieces[0].attachment #}
+
+<div class="o-background-image" style="background-image:url({{ apos.attachments.url(apos.images.first(data.widget), { size: options.size }) }})"></div>

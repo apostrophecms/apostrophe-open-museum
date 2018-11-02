@@ -19,22 +19,32 @@ const apos = require('apostrophe')({
 
     // Setup
 
-    // Instantiate apostrophe-templates module and give is a fallback directory to better separate
-    // apostrophe customization from totally project-specific templates
-    // this module will first try to serve templates from /lib/modules/apostrophe-templates/views
-    // but will fall back to /views if it doesn't find it
+    // Instantiate apostrophe-templates module and give it a fallback directory to better separate
+    // apostrophe customization from totally project-specific templates.
+    //
+    // Apostrophe will try to serve a template from the module rendering it before falling back
+    // to this global `/views` folder. 
+
     'apostrophe-templates': { viewsFolderFallback: path.join(__dirname, 'views') },
 
-    // Generic apostrophe-module designed to hold data + functions useful across the app
-    // Some uses include special template functions that go outside the depth of nunjucks
-    // and reusable, centralized apos.area configurations
+    // This module adds Nunjucks "helper functions" and helper data useful in all templates.
+    //
+    // Some uses include special template functions that go outside the depth of nunjucks,
+    // often by exporting lodash functions, and reusable, centralized apos.area configurations.
+    //
+    // The module also contains useful library .js files containing ready-made options
+    // for areas and the like, which other modules `require` to avoid redundancy.
     'helpers': { extend: 'apostrophe-module' },
+
+    // Makes extra information available to the `styleguide.html` page template.
     'styleguide': {},
 
     // apostrophe-seo adds custom meta data to the HEAD tag of a page, per page https://github.com/apostrophecms/apostrophe-seo
+    // This is not automatic, see also views/layout.html
     'apostrophe-seo': {},
 
     // apostrophe-open-graph adds custom OG meta data to the HEAD tag of a page, per page https://github.com/apostrophecms/apostrophe-open-graph
+    // This is not automatic, see also views/layout.html
     'apostrophe-open-graph': {},
 
     // apostrophe-pieces-import lets you turn on an CSV import interface per piece type https://github.com/apostrophecms/apostrophe-pieces-import
@@ -42,15 +52,17 @@ const apos = require('apostrophe')({
 
     // apostrophe-favicons adds an interface for controlling a favicon for your site and outputs the proper link tags https://github.com/apostrophecms/apostrophe-favicons
     'apostrophe-favicons': {},
+    // apostrophe-favicons arrives as a bundle of modules, apostrophe-favicons-global is the
+    // specific one we want to activate
     'apostrophe-favicons-global': {},
 
-    // Pages
+    // Custom schema fields in "Page Settings" for the "default" page type
     'default-pages': { extend: 'apostrophe-custom-pages' },
 
-    // Catagorical Piece Types
-    'category-object-types': { extend: 'apostrophe-pieces' },
+    // Categorical "meta" piece types
+    'category-object-types': { extend: 'categories' },
 
-    // Pieces
+    // Various piece types visualized around the site
     'artists': { extend: 'apostrophe-pieces' },
     'artists-pages': { extend: 'apostrophe-pieces-pages' },
 
