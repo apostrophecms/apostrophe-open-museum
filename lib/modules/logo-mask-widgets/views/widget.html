@@ -6,7 +6,7 @@
 
 <div class="c-logo-mask">
   {% if imageObj %}
-    {{ svgs.logoMask([apos.attachments.url(imageObj.item.attachment, { size: 'full', crop: imageObj.relationship })]) }}
+    {{ svgs.logoMask([apos.attachments.url(apos.images.first(imageObj.item), { size: 'full' })]) }}
   {% else %}
     No image set
   {% endif %}

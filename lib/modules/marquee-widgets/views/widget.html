@@ -4,6 +4,9 @@
   {% set screen = data.widget.screen %}
 {% endif %}
 
+{# We are interested in the options passed to the schema field #}
+{# containing our nested apostrophe-images widget #}
+
 {% set imageSchema = apos.helpers._find(data.manager.schema, { name: 'image' }) %}
 
 <div class="c-marquee{% if data.manager.options.modifier %} {{ data.manager.options.modifier }}{% endif %}">
