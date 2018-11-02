@@ -6,6 +6,7 @@
   {% endif %}
   {{ cards.render( w._content, { 
     class: 'o-cards--horizontal c-content-widget__items',
-    schema: [ { class: 'o-meta', field: 'type' }, 'title', 'startDate', 'publishedDate', 'tags', { label: 'Date: ', field: 'year' } ]
+    schema: [ { class: 'o-meta', field: 'type' }, 'title', 'startDate', 'publishedDate', 'tags', { label: 'Date: ', field: 'year' } ],
+    tagsUrl: '/search'
   }) }}
 </div>

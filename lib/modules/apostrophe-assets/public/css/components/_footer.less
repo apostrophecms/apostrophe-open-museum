@@ -2,14 +2,40 @@
   margin-top: 12rem;
   padding: 5rem 0 10rem;
   a { color: @color-brand-primary; }
-  @media @breakpoint-medium { 
+
+  .c-navigation__items {
+    @media @breakpoint-large {
+      margin-bottom: 4rem;
+    }
+    @media @breakpoint-medium {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  @media @breakpoint-medium {
     margin-top: 4rem;
+    .c-footer__inner,
+    .c-footer__nav {
+      flex-direction: column;
+    }
+
+    .c-navigation__logo {
+      margin-right: 0 !important;
+      margin-bottom: 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
 }
 
 .c-footer__inner {
  display: flex;
  justify-content: space-between; 
+ @media @breakpoint-large {
+   flex-direction: column;
+   align-items: center;
+ }
 }
 
 .c-footer .c-navigation__logo {
@@ -22,6 +48,9 @@
 
 .c-footer__credit {
   text-align: right;
+  @media @breakpoint-large {
+    text-align: center;
+  }
 }
 
 .c-footer__logo {

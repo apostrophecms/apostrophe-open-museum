@@ -28,9 +28,15 @@
     {{ submit.render() }}
   </form>
   <div class="o-container o-container--medium">
-    {{ cards.render(data.pieces) }}
-    <div class="c-pager">
-      {{ pager.render({ page: data.currentPage, total: data.totalPages }, data.url) }}
-    </div>
+    {% if data.pieces.length %}
+      {{ cards.render(data.pieces) }}
+      <div class="c-pager">
+        {{ pager.render({ page: data.currentPage, total: data.totalPages }, data.url) }}
+      </div>
+    {% else %}
+      <div class="o-body o-empty-state">
+        No artworks match that criteria
+      </div>
+    {% endif %}
   </div>
 {% endblock %}

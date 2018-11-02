@@ -60,8 +60,6 @@ const apos = require('apostrophe')({
     'default-pages': { extend: 'apostrophe-custom-pages' },
 
     // Categorical "meta" piece types
-    'categories': { extend: 'apostrophe-pieces' },
-    // Notice a piece type can extend another, adding more fields
     'category-object-types': { extend: 'categories' },
 
     // Various piece types visualized around the site
