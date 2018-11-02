@@ -65,8 +65,13 @@ const apos = require('apostrophe')({
     // Various piece types visualized around the site
     'artists': { extend: 'apostrophe-pieces' },
     'artists-pages': { extend: 'apostrophe-pieces-pages' },
-
-    'locations': { extend: 'apostrophe-pieces' },
+    'locations': {
+      extend: 'apostrophe-pieces',
+      'mapQuest': {
+        key: 'twADhGQBQQW3R9laAAzA0UaTj5Rrrskj',
+        secret: 'stTrrmLbEcY9B9Wc'
+      }
+    },
     'locations-pages': { extend: 'apostrophe-pieces-pages' },
     'locations-widgets': { extend: 'apostrophe-widgets' },
 
