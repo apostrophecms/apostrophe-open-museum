@@ -13,7 +13,7 @@ const apos = require('apostrophe')({
 
     // Note: most configuration occurs in the respective
     // modules' directories. See lib/apostrophe-assets/index.js for an example.
-    
+
     // However any modules that are not present by default in Apostrophe must at
     // least have a minimal configuration here: `moduleName: {}`
 
@@ -23,7 +23,7 @@ const apos = require('apostrophe')({
     // apostrophe customization from totally project-specific templates.
     //
     // Apostrophe will try to serve a template from the module rendering it before falling back
-    // to this global `/views` folder. 
+    // to this global `/views` folder.
 
     'apostrophe-templates': { viewsFolderFallback: path.join(__dirname, 'views') },
 
@@ -60,13 +60,18 @@ const apos = require('apostrophe')({
     'default-pages': { extend: 'apostrophe-custom-pages' },
 
     // Categorical "meta" piece types
-    'category-object-types': { extend: 'categories' },
+    'category-object-types': { extend: 'apostrophe-pieces' },
 
     // Various piece types visualized around the site
     'artists': { extend: 'apostrophe-pieces' },
     'artists-pages': { extend: 'apostrophe-pieces-pages' },
-
-    'locations': { extend: 'apostrophe-pieces' },
+    'locations': {
+      extend: 'apostrophe-pieces',
+      'mapQuest': {
+        key: 'twADhGQBQQW3R9laAAzA0UaTj5Rrrskj',
+        secret: 'stTrrmLbEcY9B9Wc'
+      }
+    },
     'locations-pages': { extend: 'apostrophe-pieces-pages' },
     'locations-widgets': { extend: 'apostrophe-widgets' },
 
@@ -82,7 +87,7 @@ const apos = require('apostrophe')({
     'events': { extend: 'apostrophe-events' },
     'events-pages': { extend: 'apostrophe-pieces-pages' },
     'events-widgets': { extend: 'apostrophe-pieces-widgets' },
-    
+
     'people': { extend: 'apostrophe-pieces' },
     'people-pages': { extend: 'apostrophe-pieces-pages' },
 
@@ -97,7 +102,7 @@ const apos = require('apostrophe')({
     'content-widgets': { extend: 'apostrophe-widgets' },
 
     // Layout Widgets
-    'columns-widgets': { extend: 'apostrophe-widgets' },
+    'columns-widgets': { extend: 'apostrophe-widgets' }
 
   }
 });

@@ -114,6 +114,8 @@ All source CSS is written in LESS, which is the CSS prepocessor bundled with Apo
 ### MapQuest API + locations piece type
 This site has built-in map widgets and geocoding functionality for its `locations` piece type. It runs both of these operations through MapQuest's free API. [You can register a key and secret here](https://developer.mapquest.com/plan_purchase/steps/business_edition/business_edition_free/register).
 
+> You do not have to enter a "callback URL" when signing up and generating your API key. Just leave that field blank.
+
 #### MapQuest configuration
 This site expects the MapQuest key and secret to be a part of the `options` object for the `locations` piece type. This repo does not come bundled with a key and secret and so you will see both server and client console warnings when doing things that require them.
 
@@ -123,7 +125,7 @@ In `/app.js`
 
 ```
 
-var apos = require('apostrophe')({
+const apos = require('apostrophe')({
   shortName: 'apostrophe-demo-2018',
   modules: {
     // ... other module configurations
