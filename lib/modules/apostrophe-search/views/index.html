@@ -9,7 +9,13 @@
 {% set page = data.page %}
 
 {% block main %}
-  {{ masthead.render(data.page, { title: 'Search results for ‘' + data.query.search + '’', search: data.query.search } ) }}
+  {% if data.query.search %}
+    {% set query = data.query.search %}
+  {% elif data.query.tag %}
+    {% set query = data.query.tag %}
+  {% endif %}
+
+  {{ masthead.render(data.page, { title: 'Search results for ‘' + query + '’', search: query } ) }}
 
   <div class="o-wrapper o-page c-search-results-page">
     

@@ -2,7 +2,7 @@
 
 {% macro render(tags) %}
   <div class="o-field-container o-field-container--tags">
-    <label class="o-field-label">Filter by Tags</label>
+    <label for="tag" class="o-field-label">Filter by Tags</label>
     <select multiple class="o-field-input o-field-input--tag" name="tag" id="tag" data-unfocus-submit>
       <option value=""></option>
       {% for tag in tags %}

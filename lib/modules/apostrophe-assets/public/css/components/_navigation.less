@@ -1,6 +1,7 @@
 .c-navigation__logo {
   position: relative;
   z-index: 2;
+  white-space: nowrap;
 }
 .c-navigation__logo-mask, .c-navigation__logo{
   color: transparent;
@@ -43,6 +44,9 @@
 
 .c-navigation__item {
   padding: 0 1.5rem;
+  @media @breakpoint-mid {
+    padding: 0 1%;
+  }
 }
 
 .c-navigation__item--active .c-navigation__link {
@@ -93,29 +97,5 @@
 .c-navigation__link svg {
   @media @breakpoint-medium {
     display: none;
-  }
-}
-
-.c-footer {
-  @media @breakpoint-medium {
-    .c-footer__inner,
-    .c-footer__nav {
-      flex-direction: column;
-    }
-    .c-footer__credit {
-      text-align: center;
-    }
-    .c-navigation__items {
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: 4rem;
-    }
-    .c-navigation__logo {
-      margin-right: 0 !important;
-      margin-bottom: 4rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
   }
 }

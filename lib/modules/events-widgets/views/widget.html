@@ -9,7 +9,8 @@
     </div>
     <div class="c-event-widget__content">
       {{ cards.render(w._pieces, {
-        schema: ['title', 'publishedAt', 'tags']
+        schema: ['title', 'publishedAt', 'tags'],
+        tagsUrl: w._linkPage._url
       }) }}
     </div>
   </div>

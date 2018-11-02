@@ -48,8 +48,7 @@ const apos = require('apostrophe')({
     'default-pages': { extend: 'apostrophe-custom-pages' },
 
     // Catagorical Piece Types
-    'categories': { extend: 'apostrophe-pieces' },
-    'category-object-types': { extend: 'categories' },
+    'category-object-types': { extend: 'apostrophe-pieces' },
 
     // Pieces
     'artists': { extend: 'apostrophe-pieces' },

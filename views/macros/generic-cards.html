@@ -17,7 +17,7 @@
           {% elif item === 'tags' %} 
             <ul class="o-tag-list">
               {% for tag in piece.tags %}
-                <li><a class="o-tag" href="?{{ tag }}">{{ tag }}</a></li>
+                <li><a class="o-tag" href="{{ options.tagsUrl if options.tagsUrl }}?tag={{ tag }}">{{ tag }}</a></li>
               {% endfor %}
             </ul>
           {% elif apos.helpers._isObject(item) %}

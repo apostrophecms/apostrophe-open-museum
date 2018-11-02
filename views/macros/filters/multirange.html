@@ -2,7 +2,7 @@
 
 {% macro render(options) %}
    <div class="o-field-container o-field-container--multirange">
-    <label class="o-field-label">Filter by Year</label>
+    <label class="o-field-label" for="era">Filter by Year</label>
     <div class="c-popup c-multirange" data-popup data-multirange>
       <div class="o-body c-multirange__display" data-popup-open>
         <span data-multirange-display></span>
@@ -17,9 +17,8 @@
           <div class="c-multirange__wrapper">
             <input type="hidden" name="eraMin" id="eraMin" class="c-multirange__ghost-input" data-multirange-ghost-min>
             <input type="hidden" name="eraMax" id="eraMax" class="c-multirange__ghost-input" data-multirange-ghost-max>
-            <input type="range" data-multirange-input multiple min="{{ options.min.value }}" max="{{ options.max.value }}" value="{{ options.min.value }},{{ options.max.value}}" />
+            <input type="range" id="era" data-multirange-input multiple min="{{ options.min.value }}" max="{{ options.max.value }}" value="{{ options.min.value }},{{ options.max.value}}" />
           </div>
-          {# <button class="o-tag o-tag--active c-tag-picker__submit" data-multirange-submit>Filter</button> #}
         </div>
         <div class="o-color-brand-primary c-multirange__labels">
           <span class="c-multirange__label c-multirange__label--min">{{ options.min.label }}</span>
