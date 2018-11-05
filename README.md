@@ -23,20 +23,6 @@ You should now be able to access the site at: [http://localhost:3000](http://loc
 
 See the [Apostrophe tutorials](https://apostrophecms.org/docs/tutorials/getting-started/index.html) for more information.
 
-## Installation
-If you've never used ApostropheCMS before you'll probably want to check out the official [Getting Started / Setting Up Your Environment](https://apostrophecms.org/docs/tutorials/getting-started/setting-up-your-environment.html) tutorial.
-
-Once you have that up and running you'll want to clone this repo and 
-
-```
-npm install
-```
-
-and then
-```
-npm start
-```
-
 ## Request for Feedback
 
 We're currently looking for feedback on what would make this a more useful demo and a more friendly repository for those just getting started with Apostrophe.
