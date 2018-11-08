@@ -15,3 +15,7 @@ node_modules
 /public/css/master-*.less
 .jshintrc
 /public/js/_site-compiled.js
+
+# Don't commit P'unk specific settings
+/deployment/settings.staging
+/deployment/settings.production
