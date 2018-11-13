@@ -3,7 +3,7 @@
 {% macro render(tags) %}
   <div class="o-field-container o-field-container--tags">
     <label for="tag" class="o-field-label">Filter by Tags</label>
-    <select multiple class="o-field-input o-field-input--tag" name="tag" id="tag" data-unfocus-submit>
+    <select multiple class="o-field-input o-field-input--tag" name="tags" id="tags" data-unfocus-submit>
       <option value=""></option>
       {% for tag in tags %}
         <option value="{{ tag.value }}">{{ tag.label }}</option>
