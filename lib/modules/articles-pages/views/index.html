@@ -6,9 +6,7 @@
   {{ apos.singleton(data.page, 'featured', 'articles-featured') }}
 
   <div data-apos-ajax-context="blog">
-    <div data-apos-ajax-context="people">
-      {% include "indexAjax.html" %}
-    </div>
+    {% include "indexAjax.html" %}
   </div>
 {% endblock %}
 
