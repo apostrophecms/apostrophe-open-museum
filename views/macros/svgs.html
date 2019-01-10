@@ -60,7 +60,7 @@
       </mask>
     </defs>
     {% for path in paths %}
-      <image width="100%" height="100%" preserveAspectRatio="xMidYMid slice" xlink:href="{{ path }}" mask="url(#logo-mask)"></image>  
+      <image width="100%" height="100%" preserveAspectRatio="xMidYMid slice" xlink:href="{{ path }}" mask="url(#logo-mask)"></image>
     {% endfor %}
   </svg>
 {% endmacro %}
@@ -136,4 +136,48 @@
     </g>
   </g>
 </svg>
+{% endmacro %}
+
+{% macro arrowUp() %}
+
+<svg width="68px" height="76px" viewBox="0 0 68 76" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+      <path d="M41.8043647,45.4397061 L41.8043647,58.4945033 C41.8043647,60.4274999 40.2373613,61.9945033 38.3043647,61.9945033 L30.3043647,61.9945033 C28.3713681,61.9945033 26.8043647,60.4274999 26.8043647,58.4945033 L26.8043647,45.4397061 L20,45.4397061 C16.6862915,45.4397061 14,42.7534146 14,39.4397061 C14,38.1846588 14.3935587,36.9612066 15.125286,35.9415405 L29.0751752,16.5022892 C31.0071587,13.810059 34.7558246,13.1937573 37.4480549,15.1257408 C37.9787794,15.5065965 38.4437476,15.9715647 38.8246033,16.5022892 L52.7744925,35.9415405 C54.706476,38.6337707 54.0901743,42.3824366 51.3979441,44.3144202 C50.378278,45.0461474 49.1548257,45.4397061 47.8997784,45.4397061 L41.8043647,45.4397061 Z" id="path-1"></path>
+      <filter x="-52.6%" y="-43.8%" width="205.3%" height="187.5%" filterUnits="objectBoundingBox" id="filter-2">
+          <feMorphology radius="3" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+          <feOffset dx="0" dy="0" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+          <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+          <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+          <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.168308424 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+      </filter>
+  </defs>
+  <g id="desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+      <g id="Combined-Shape" fill-rule="nonzero">
+          <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+          <use stroke="#524979" stroke-width="3" fill="#FFFFFF" xlink:href="#path-1"></use>
+      </g>
+  </g>
+</svg>
+{% endmacro %}
+
+{% macro arrowDown() %}
+
+<svg width="68px" height="76px" viewBox="0 0 68 76" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <path d="M41.8043647,45.4397061 L41.8043647,58.4945033 C41.8043647,60.4274999 40.2373613,61.9945033 38.3043647,61.9945033 L30.3043647,61.9945033 C28.3713681,61.9945033 26.8043647,60.4274999 26.8043647,58.4945033 L26.8043647,45.4397061 L20,45.4397061 C16.6862915,45.4397061 14,42.7534146 14,39.4397061 C14,38.1846588 14.3935587,36.9612066 15.125286,35.9415405 L29.0751752,16.5022892 C31.0071587,13.810059 34.7558246,13.1937573 37.4480549,15.1257408 C37.9787794,15.5065965 38.4437476,15.9715647 38.8246033,16.5022892 L52.7744925,35.9415405 C54.706476,38.6337707 54.0901743,42.3824366 51.3979441,44.3144202 C50.378278,45.0461474 49.1548257,45.4397061 47.8997784,45.4397061 L41.8043647,45.4397061 Z" id="path-1"></path>
+        <filter x="-52.6%" y="-43.8%" width="205.3%" height="187.5%" filterUnits="objectBoundingBox" id="filter-2">
+            <feMorphology radius="3" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="0" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.168308424 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Combined-Shape-Copy" fill-rule="nonzero" transform="translate(33.950117, 37.997252) rotate(-180.000000) translate(-33.950117, -37.997252) ">
+            <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+            <use stroke="#524979" stroke-width="3" fill="#FFFFFF" xlink:href="#path-1"></use>
+        </g>
+    </g>
+  </svg>
 {% endmacro %}

@@ -1,0 +1,51 @@
+.c-demo-notification {
+  font-family: @font-family-body;
+  position: fixed;
+  z-index: 30;
+  right: 2rem;
+  bottom: 2rem;
+  padding: 2rem 3rem;
+  background-color: @color-white;
+  box-shadow: 2px 5px 10px -3px #524979;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.c-demo-notification__background {
+  position: absolute;
+  left: -2rem;
+  top: -1rem;
+  opacity: 0.8;
+}
+
+.c-demo-notification__content {
+  max-width: 290px;
+  margin-right: 30px;
+}
+.c-demo-notification__container {
+  display: flex;
+  align-items: center;
+}
+
+.c-demo-notification__headline {
+  font-size: 16px;
+  font-weight: 700;
+  color: #4A4A4A;
+  margin-bottom: 0.5rem;
+}
+
+.c-demo-notification__body {
+  font-size: 13px;
+  color: #4A4A4A;
+  line-height: 1.4;
+}
+
+.c-demo-notification__button {
+  background-image: linear-gradient(-46deg, #EB4339 0%, #B327BF 47%, #6666FE 100%);
+  border-radius: 7px;
+  color: @color-white;
+  font-weight: 700;
+  font-size: 14px;
+  height: 4rem;
+  padding: 0 1rem
+}
