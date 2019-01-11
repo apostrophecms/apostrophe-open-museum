@@ -4,11 +4,17 @@
   z-index: 30;
   right: 2rem;
   bottom: 2rem;
-  padding: 2rem 3rem;
+  padding: 2rem 3rem 2rem 5rem;
   background-color: @color-white;
   box-shadow: 2px 5px 10px -3px #524979;
   border-radius: 10px;
   overflow: hidden;
+  transition: all 0.5s ease;
+  transform: translateX(0rem);
+}
+
+.c-demo-notification--hidden {
+  transform: translateX(50rem);
 }
 
 .c-demo-notification__background {
@@ -48,4 +54,13 @@
   font-size: 14px;
   height: 4rem;
   padding: 0 1rem
+}
+
+.c-demo-notification__close {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  padding: 0.2rem 1rem 1rem;
+  font-size: 19px;
 }

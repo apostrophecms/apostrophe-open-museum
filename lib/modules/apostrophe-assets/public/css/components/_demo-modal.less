@@ -18,6 +18,13 @@
   pointer-events: none;
 }
 
+.c-demo-modal--obscured {
+  background-color: fade(@color-brand-primary, 0%);
+  .c-demo-modal__content {
+    opacity: 0.1;
+  }
+}
+
 .is-demo-mode--true--active .c-demo-modal {
   opacity: 1;
   pointer-events: auto;
@@ -26,9 +33,10 @@
 .c-demo-modal__content {
   position: relative;
   background-color: @color-white;
-  padding: 5rem 8rem;;
+  padding: 5rem 8rem;
   box-shadow: 0px 0px 100px 11px rgba(0,0,0,0.3);
   border-radius: 10px;
+  transition: all 0.4s ease;
 }
 
 .c-demo-modal__headline {
@@ -39,7 +47,10 @@
   border: 1px solid @color-brand-primary;
   max-width: 400px;
   margin: 0 auto;
-  display: block;
+  display: none;
+  &.is-loaded {
+    display: block;
+  }
 }
 
 .c-demo-modal__list {
@@ -80,7 +91,7 @@
   top: 11rem;
 }
 .c-demo-modal__pointer-container--page-menu {
-  left: 5rem;
+  left: 50px;
   bottom: 7rem;
 }
 
@@ -100,6 +111,28 @@
   g { fill: @color-dark !important; }
 }
 
+.is-highlighting-demo {
+  .c-header,
+  .c-masthead,
+  .o-container,
+  .c-footer
+   {
+    filter:blur(4px);
+  }
+}
+
+.is-highlighting-demo--pageMenu {
+  .apos-context-menu-container {
+    z-index: 1009;
+  }
+}
+
+.is-highlighting-demo--adminBar {
+  .apos-admin-bar {
+    z-index: 1009;
+  }
+}
+
 
 @keyframes arrowBounce {
   from {
@@ -117,4 +150,5 @@
     transform: translateY(-15px);
   }
 }
+
 

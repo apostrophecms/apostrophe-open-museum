@@ -2,7 +2,7 @@
 
 {% macro render() %}
 <div class="c-demo-modal" data-demo-modal>
-  <div class="c-demo-modal__content">
+  <div class="c-demo-modal__content" data-demo-modal-content>
     <h3 class="o-headline c-demo-modal__headline">Welcome to the ApostropheCMS Demo!</h3>
     <ul class="o-body c-demo-modal__list">
       <li>Use the mouse to find and interact with editable content.</li>
@@ -10,7 +10,8 @@
       <li>Use the <span class="c-demo-modal__pointer-link" data-demo-modal-pointer-link="adminBar">Admin Bar</span> up top to edit global content.</li>
       <li>Add Content by using the <strong>Plus</strong> buttons (Shown below).</li>
     </ul>
-    <img class="c-demo-modal__gif" src="/images/apos-addcontent.gif" alt="Adding content to ApostropheCMS" />
+    {# js will toggle this visible if needed, otherwise don't load it #}
+    <img data-demo-modal-gif class="c-demo-modal__gif" src="/images/apos-addcontent.gif" alt="Adding content to ApostropheCMS" />
     <button class="c-demo-modal__close-button" data-demo-modal-close>Got it! Let's use Apostrophe!</button>
   </div>
   <div class="c-demo-modal__pointer-container c-demo-modal__pointer-container--admin-bar" data-demo-modal-pointer="adminBar">
