@@ -1,7 +1,7 @@
 .c-demo-notification {
   font-family: @font-family-body;
   position: fixed;
-  z-index: 30;
+  z-index: 400;
   right: 2rem;
   bottom: 2rem;
   padding: 2rem 3rem 2rem 5rem;
@@ -14,7 +14,7 @@
 }
 
 .c-demo-notification--hidden {
-  transform: translateX(50rem);
+  transform: translateX(53rem);
 }
 
 .c-demo-notification__background {
@@ -44,6 +44,17 @@
   font-size: 13px;
   color: #4A4A4A;
   line-height: 1.4;
+  a {
+    background-image: linear-gradient(-46deg, #CC9300 0%, #EA433A 26%, #B327BF 47%, #6666FF 76%, #00BF9A 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none;
+    &:hover {
+      -webkit-text-fill-color: white;
+      -webkit-background-clip: unset;
+      text-decoration: none;
+    }
+  }
 }
 
 .c-demo-notification__button {
@@ -52,8 +63,9 @@
   color: @color-white;
   font-weight: 700;
   font-size: 14px;
-  height: 4rem;
-  padding: 0 1rem
+  // height: 4rem;
+  padding: 1.5rem 1rem;
+  text-decoration: none;
 }
 
 .c-demo-notification__close {
@@ -61,6 +73,10 @@
   left: 0;
   top: 0;
   bottom: 0;
-  padding: 0.2rem 1rem 1rem;
+  padding: 1rem;
   font-size: 19px;
+  &:active, &:focus {
+    outline: none;
+    border: none;
+  }
 }
