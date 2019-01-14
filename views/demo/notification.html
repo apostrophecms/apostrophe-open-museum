@@ -1,0 +1,15 @@
+{% macro render() %}
+  <div class="c-demo-notification c-demo-notification--hidden" data-demo-notification>
+    <div class="c-demo-notification__background"></div>
+    <button class="c-demo-notification__close" data-demo-notification-toggle>←</button>
+    <div class="c-demo-notification__container">
+      <div class="c-demo-notification__content">
+        <h5 class="c-demo-notification__headline">You’re demoing ApostropheCMS!</h5>
+        <p class="c-demo-notification__body">Interested in documentation? Support? Want to do a custom project?</p>
+      </div>
+      <div class="c-demo-notification__button">
+        <button class="c-demo-notification__button">Contact Us</button>
+      </div>
+    </div>
+  </div>
+{% endmacro %}
