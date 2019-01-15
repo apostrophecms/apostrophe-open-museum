@@ -1,8 +1,8 @@
-# Apostrophe Demo 2018
+# Open Museum
 
 ## Introduction
 
-This demo is meant to serve two main goals: The first being it is fully styled, responsive, generic website to use as a starting point for your own Apostrophe development. The second being a demonstration of a fully featured production-ready Apostrophe build: a host of widgets (both simple and complex), networks of related content (pieces), custom content taxonomy, importing pieces, maps, advanced Apostrophe configuration, etc. all while organizing code the way we, the ApostropheCMS maintainers, do in production.
+This project is meant to serve two main goals: The first being it is fully styled, responsive, generic website to use as a starting point for your own Apostrophe development. The second being a demonstration of a fully featured production-ready Apostrophe build: a host of widgets (both simple and complex), networks of related content (pieces), custom content taxonomy, importing pieces, maps, advanced Apostrophe configuration, etc. all while organizing code the way we, the ApostropheCMS maintainers, do in production.
 
 ## Getting Started
 
