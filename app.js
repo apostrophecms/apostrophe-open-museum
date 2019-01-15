@@ -1,7 +1,7 @@
 const path = require('path');
 
 const apos = require('apostrophe')({
-  shortName: 'apostrophe-demo-2018',
+  shortName: 'apostrophe-open-museum',
 
   // See lib/modules for basic project-level configuration of our modules
   // responsible for serving static assets, managing page templates and

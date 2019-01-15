@@ -11,8 +11,8 @@ You need to [set up your environment](https://apostrophecms.org/docs/tutorials/g
 Then run:
 
 ```
-git clone https://github.com/apostrophecms/apostrophe-demo-2018
-cd apostrophe-demo-2018
+git clone https://github.com/apostrophecms/apostrophe-open-museum
+cd apostrophe-open-museum
 npm install
 node app apostrophe-users:add admin admin
 [enter password when prompted]
@@ -112,7 +112,7 @@ In `/app.js`
 ```
 
 const apos = require('apostrophe')({
-  shortName: 'apostrophe-demo-2018',
+  shortName: 'apostrophe-open-museum',
   modules: {
     // ... other module configurations
     'locations': {
