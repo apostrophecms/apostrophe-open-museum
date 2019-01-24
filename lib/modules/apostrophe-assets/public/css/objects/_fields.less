@@ -16,7 +16,7 @@
 
 .o-field-input--text {
   border: 1px solid @color-brand-primary;
-  padding: 1rem;
+  padding: 1.15rem;
   max-width: 30rem;
   width: 100%;
   font-family: @font-family-body;
@@ -85,4 +85,21 @@
     background-color: @color-brand-primary;
     opacity: 0;
   }
+}
+
+
+// Fancy custom multi select
+.o-field-container--tags {
+  .o-field-input--tag {
+    opacity: 0;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+    float: left; // remove from flow
+  }
+
+}
+
+.o-fieldset {
+  border: none;
 }

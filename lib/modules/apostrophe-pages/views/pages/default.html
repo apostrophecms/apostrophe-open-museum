@@ -1,13 +1,11 @@
 {% extends "layout.html" %}
 {% import "macros/masthead.html" as masthead %}
-{% import "macros/peerNav.html" as peerNav %}
+{% import "macros/peer-nav.html" as peerNav %}
 {% set page = data.page %}
 
 {% if page.peerNav !== false %}
   {% set wrapper = 'o-container' %}
   {% set widgets = apos.helpers.narrowWidgets %}
-  {{ apos.log('hello') }}
-  {# {{ apos.log(widgets) }} #}
 {% else %}
   {% set wrapper = 'o-wrapper' %}
   {% set widgets = apos.helpers.baseWidgets %}
@@ -20,11 +18,16 @@
 
   <div class="{{ wrapper }} o-page">
     {% if page.peerNav !== false %}
-      {{ peerNav.render(page._ancestors[0]._children, page) }}
+      {% if page._children.length %}
+        {{ peerNav.render(page._children, page) }}
+      {% else %}
+        {{ peerNav.render(page._ancestors[page._ancestors.length - 1]._children, page) }}
+      {% endif %}
     {% endif %}
     <main class="u-small-dropdowns c-area">
       {{ apos.area(data.page, 'body', {
-        widgets: widgets
+        widgets: widgets,
+        wrapperClass: 'foobar'
       }) }}
     </main>
   </div>

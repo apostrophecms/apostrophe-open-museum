@@ -1,32 +1,11 @@
-.c-artworks-cards {
-  display: grid;
-  height: 100%;
-  grid-template-columns: 30% 30% 30%;
-  grid-gap: 2% 5%;
-
-  .c-artworks-card {
-    margin-bottom: 4rem;
-  }
-}
-
-.c-artworks-card {
-  border: 1px solid @color-brand-primary;
-  text-decoration: none;
-  transition: @transition-ease-in-out;
-  &:hover {
-    box-shadow: @shadow
-  }
-}
-
-.c-artworks-card__info {
-  display: block;
-  color: @color-dark;
-}
-
 .c-artworks-card__media {
   position: relative;
   height: 35rem;
   margin-bottom: 3rem;
+
+  @media @breakpoint-medium {
+    height: auto;
+  }
   
   img {
     position: absolute;
@@ -36,12 +15,38 @@
     left: 0;
     right: 0;
     margin: auto;
+    width: auto;
+    @media @breakpoint-medium {
+      position: relative;
+      max-height: none;
+      top: auto;
+      right: auto;
+      bottom: auto;
+      left: auto;
+    }
   }
 }
 
-.c-artworks-card__content {
-  padding: 0 1.5rem 2rem;
-}
-
+.c-artist-card__content { padding: 1.5rem; }
 .c-artworks-card__title { margin-bottom: 0.5rem; }
 .c-artworks-card__artist { margin-bottom: 2rem; }
+
+.o-cards--horizontal {
+  &:hover .c-artworks-card img {
+    outline: none;
+  }
+  .c-artworks-card__media {
+    height: auto;
+    width: 25rem;
+    margin-bottom: none;
+    img {
+      outline: none;
+      position: relative;
+      max-height: none;
+      top: auto;
+      right: auto;
+      bottom: auto;
+      left: auto;
+    }
+  }
+}

@@ -1,20 +1,51 @@
 {% extends 'layout.html' %}
 {% set piece = data.piece %}
+{% set artist = data.piece._artist %}
 {% import 'apostrophe-templates:macros/breadcrumbs.html' as breadcrumbs %}
+{% import 'macros/artwork-cards.html' as cards %}
 {% import 'macros/image.html' as image %}
+{% import 'macros/definitionList.html' as dl %}
 
 {% block main %}
   <main class="o-mt-6 o-container o-container--medium c-artwork-page">
     {{ breadcrumbs.render(data.page) }}
     <h1 class="o-color-brand-primary o-title c-artwork-page__title">{{ piece.title }}</h1>
     {% if piece._artist %}
-      <h2 class="o-subheadline c-artwork-page__artist">{{ piece._artist.title }}</h2>  
+      <h2 class="o-subheadline c-artwork-page__artist">{{ artist.title }}</h2>  
     {% endif %}
     <figure class="c-artwork-page__image">
       {{ image.render(piece.thumbnail.items[0]._pieces[0]) }}
     </figure>
-    <div class="o-container o-container--narrow c-artwork-page__body">
-    lkjnrg
+    <div class="o-container o-container--narrow c-meta-columns c-artwork-page__content">
+      <div class="c-meta-columns__left c-artwork-page__meta">
+        <dl class="c-defintion-list c-artwork-page__meta-list">
+          {{ dl.render(piece, [
+            { name: 'year', label: 'Date' },
+            { name: 'medium' },
+            { name: 'dimensions' },
+            { name: '_location.title', label: 'Location' }
+          ]) }}
+        </dl>
+      </div>
+      <div class="c-meta-columns__right c-artwork-page__body">
+        {{ apos.area(piece, 'body', { widgets: apos.helpers.narrowWidgets }) }}
+      </div>
+    </div>
+    <div class="o-container o-container--narrow c-meta-columns c-artwork-page__artist">
+      <figure class="c-meta-columns__left c-artwork-page__artist__thumbnail">
+        {{ image.render(artist.thumbnail.items[0]._pieces[0]) }}
+      </figure>
+      <div class="c-meta-columns__right c-artwork-page__artist__description">
+        <h4 class="o-subheadline">About {{ artist.title }}</h4>
+        <p class="o-body">
+          {{ artist.description }}
+        </p>
+        <a href="{{ artist._url }}" class="o-button">Learn More</a>
+      </div>
+    </div>
+    <div class="o-container c-artwork-page__related">
+      <h4 class="o-headline o-color-brand-primary c-artwork-page__related__header">Related Work</h4>
+      {{ cards.render(data.related, { class: 'o-cards--horizontal' }) }}
     </div>
   </main>
 {% endblock %}

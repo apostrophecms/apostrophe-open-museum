@@ -1,0 +1,53 @@
+.c-generic-cards.o-cards--horizontal {
+    .c-generic-card__content {
+      padding: 1.5rem;
+    }
+    .c-generic-card__media {
+    height: auto;
+    width: 25rem;
+    img {
+      position: relative;
+      max-height: none;
+      top: auto;
+      right: auto;
+      bottom: auto;
+      left: auto;
+    }
+  }
+}
+.c-generic-card {
+  border: none;
+  &:hover {
+    box-shadow: none;
+  }
+
+  .o-card__info {
+    display: block;
+    margin-bottom: 1.2rem;
+    font-family: @font-family-display;
+    font-size: 1.4rem;
+    &.o-meta {
+      font-family: @font-family-body;
+      color: @color-brand-primary;
+      font-size: @font-size-meta;
+      text-transform: uppercase;
+    }
+  }
+
+  .c-generic-card__title {
+    line-height: 140%;
+    text-decoration: none;
+    font-family: @font-family-body;
+  }
+}
+
+.c-generic-card__media {
+  margin-bottom: 1rem;
+}
+
+.c-generic-card__content {
+  padding: 0;
+  .o-tag-list {
+    margin-top: 2rem;
+  }
+}

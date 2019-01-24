@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+{% import 'macros/masthead.html' as masthead %}
+{% set piece = data.piece %}
+
+{% block main %}
+  {{ masthead.render(data.piece, { media: true, page: data.page, type: 'article' }) }}
+  <div class="o-container o-container--large c-article-page">
+    <div class="u-small-dropdowns c-area c-article-page__body">
+      {{ apos.area(piece, 'body', { widgets: apos.helpers.baseWidgets }) }}
+    </div>
+  </div>
+{% endblock %}

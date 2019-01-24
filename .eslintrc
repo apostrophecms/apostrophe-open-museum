@@ -1,0 +1,48 @@
+{
+  'extends': 'standard',
+  "rules": {
+    'semi': ['error', 'always' ],
+    'no-unused-vars': ['error', { 'varsIgnorePattern': 'apos', 'args': 'none', 'ignoreRestSiblings': true }],
+    "import/no-extraneous-dependencies": 1,
+    'no-var': 'error',
+  },
+  "overrides": [
+    {
+      "files": [ "**/public/**/*.js" ],
+      "globals": {
+        "window": true,
+        "document": true,
+        "location": true,
+        "apos": true,
+        "_": true,
+        "async": true,
+        "confirm": true,
+        "$": true,
+        "CKEDITOR_BASEPATH": true,
+        "CKEDITOR": true,
+        "alert": true,
+        "jQuery": true,
+        "sluggo": true,
+        "moog": true,
+        "Pikaday": true,
+        "moment": true
+      },
+      "rules": {
+        /* for bc with older browsers since this is not a Babel build */
+        'no-var': 0
+      }
+    },
+    {
+      "files": [ "test/**/*.js" ],
+      "globals": {
+        "describe": true,
+        "it": true,
+        "after": true,
+        "before": true
+      },
+      "rules": {
+        "no-console": 0
+      }
+    }
+  ]
+}

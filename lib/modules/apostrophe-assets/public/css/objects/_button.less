@@ -10,7 +10,7 @@
   background-color: @color-white;
   text-decoration: none;
   transition: @transition-ease-in-out;
-  &:hover { box-shadow: @shadow; }
+  &:hover { box-shadow: @shadow; cursor: pointer; }
   &:active { box-shadow: none; }
 }
 
@@ -26,4 +26,9 @@
   background-color: transparent;
   &:hover { background-color: fade(@color-white, 50%) }
   &:active { background-color: @color-white; color: @color-brand-primary; }
+}
+
+.o-button--ghost--alt {
+  border-color: @color-brand-primary;
+  color: @color-brand-primary;
 }

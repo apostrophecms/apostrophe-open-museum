@@ -1,0 +1,59 @@
+.c-search-page {
+  position: relative;
+  min-height: 80vh;
+
+  .c-link__link,
+  .c-breadcrumbs__link {
+    color: @color-white;
+    font-weight: 700;
+    &:after {
+      background-color: @color-white;
+    }
+  }
+  & ~ .c-footer {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.c-search-page__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  background-color: @color-dark;
+  .o-background-image {
+    width: 100vw;
+    height: 100vh;
+    opacity: 0.5;
+  }
+}
+
+.c-search-page__content {
+  position: relative;
+  z-index: 5;
+  padding: 8rem 0;
+  color: @color-white;
+}
+
+.c-search-page__title {
+  margin: 10rem 0 4rem;
+}
+
+.c-search-page__suggested {
+  margin-top: 12rem;
+}
+
+.c-search-page__suggested-text {
+  margin-bottom: 2rem;
+}
+
+.c-search-result__header {
+  margin-bottom: 4rem;
+}
+
+.c-search-result__group {
+  margin-bottom: 10rem;
+}

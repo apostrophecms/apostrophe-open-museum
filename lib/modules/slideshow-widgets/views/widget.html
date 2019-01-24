@@ -3,23 +3,25 @@
 
 {% set w = data.widget %}
 {% set images = w.images %}
-<div class="c-slideshow">
+<div class="o-container o-container--medium c-slideshow">
   <div class="c-slideshow__header">
-    <span class="c-slideshow__title o-headline">{{ w.title }}</span>
+    <span class="o-color-brand-primary o-headline c-slideshow__title">{{ w.title }}</span>
     <div class="c-slideshow__info">
       <div class="swiper-container c-slideshow__gallery-description-items" data-slideshow-descriptions>
         <div class="swiper-wrapper c-slideshow__description-wrapper">
           {% for image in images.items[0]._pieces %}
             <div class="swiper-slide o-meta c-slideshow__description-item">
-              {{ image.item.attachment.title }}
+              {{ image.item.title }}
             </div>
           {% endfor %}
         </div>
       </div>
       <div class="o-meta c-slideshow__gallery-pager">
-        <button class="c-slideshow__pager-button c-slideshow__pager-button--prev" data-slideshow-prev>{{ svgs.chevronLeft() }}</button>
-        <span class="c-slideshow__pager-count" data-gallery-current>1</span> / <span class="c-slideshow__pager-count" data-gallery-total>{{ images.items[0]._pieces.length }}</span>
-        <button class="c-slideshow__pager-button c-slideshow__pager-button--next" data-slideshow-next>{{ svgs.chevronRight() }}</button>
+        {% if images.items[0]._pieces.length > 1 %}
+          <button class="c-slideshow__pager-button c-slideshow__pager-button--prev" data-slideshow-prev>{{ svgs.chevronLeft() }}</button>
+          <span class="c-slideshow__pager-count" data-gallery-current>1</span> / <span class="c-slideshow__pager-count" data-gallery-total>{{ images.items[0]._pieces.length }}</span>
+          <button class="c-slideshow__pager-button c-slideshow__pager-button--next" data-slideshow-next>{{ svgs.chevronRight() }}</button>
+        {% endif %}
       </div>
     </div>
   </div>

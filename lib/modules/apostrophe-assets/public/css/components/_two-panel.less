@@ -1,5 +1,8 @@
 .c-two-panel {
   display: flex;
+  @media @breakpoint-medium {
+    flex-direction: column
+  }
 }
 
 .c-two-panel__body {
@@ -8,6 +11,15 @@
 
 .c-two-panel__content {
   width: 50%;
+  @media @breakpoint-medium {
+    width: 100%;
+  }
+}
+
+.c-two-panel__media {
+  @media @breakpoint-medium {
+    height: 40vw;
+  }
 }
 
 .c-two-panel__media {

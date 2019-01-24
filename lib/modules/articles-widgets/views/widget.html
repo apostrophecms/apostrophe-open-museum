@@ -1,0 +1,17 @@
+{% import 'macros/generic-cards.html' as cards %}
+{% set w = data.widget %}
+
+<div class="o-container c-article-widget">
+  <div>
+    <div class="c-article-widget__header">
+      <h4 class="o-subheadline">{{ w.headline }}</h4>
+      <a class="o-link" href="{{ w.linkUrl if w.linkUrl else w._linkPage._url }}">{{ w.linkText }}</a>
+    </div>
+    <div class="c-article-widget__content">
+      {{ cards.render(w._pieces, {
+        schema: ['title', 'publishedAt', 'tags'],
+        tagsUrl: w.linkUrl if w.linkUrl else w._linkPage._url
+      }) }}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,6 @@
+{% macro render(pluralLabel) %}
+  <div class="o-field-container c-field-search">
+    <label for="search" class="o-field-label">Search {{ pluralLabel }}</label>
+    <input class="o-field-input o-field-input--text" id="search" name="search" value="{{ data.query.search }}" type="text" />
+  </div>
+{% endmacro %}

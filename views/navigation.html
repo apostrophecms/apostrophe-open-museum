@@ -1,21 +1,48 @@
 {% import 'macros/svgs.html' as svgs %}
 
-{% macro render(apos, home, currentPage, images) %}
-  {% set logoObj = apos.helpers._shuffle(images.items[0]._pieces)[0] %}
-  {% set logoUrl = apos.attachments.url(logoObj.item.attachment, { size: 'full', crop: logoObj.relationship })  %}
-  <a href="/" class="c-navigation__logo">
+{% macro render(apos, home, currentPage, images, options) %}
+  {% set paths = apos.helpers.getPaths(apos.helpers._shuffle(images.items[0]._pieces)) %}
+  <a href="/" class="c-navigation__logo" data-logo-mask>
     <span class="c-navigation__logo-mask">
-      {{ svgs.logoMask(logoUrl) }}
+      {{ svgs.logoMask(paths) }}
     </span>
     {{ svgs.logoType() }}
   </a>
   <ul class="c-navigation__items">
     {% for tab in home._children %}
-      <li class=" c-navigation__item
+      <li class="c-navigation__item
         {% if currentPage and (apos.pages.isAncestorOf(tab, currentPage) or tab._id == currentPage._id) %}
           c-navigation__item--active
         {% endif %}
-      "><a class="o-body c-navigation__link" href="{{ tab._url }}">{{ tab.title }}</a></li>
+      "><a class="o-body c-navigation__link" href="{{ tab._url }}">
+        {{ tab.title }}{% if options.arrows and tab._children.length > 0 %}{{ svgs.navArrow() }}{% endif %}
+        </a>
+        {% if tab._children.length > 0 and options.arrows %}
+          <ul class="o-body c-navigation__item__subnav" aria-label="subnav">
+          {% for child in tab._children %}
+            <li><a href="{{ child._url }}">{{ child.title }}</a></li>
+          {% endfor %}
+          </ul>
+        {% endif %}
+        </li>
     {% endfor %}
+    {% if options.search %}
+      <li class="c-navigation__item">
+        <a class="o-icon o-body c-navigation__link" href="/search">
+          {{ svgs.search() }}
+          <span class="c-navigation__mobile-label" >Search</span>
+        </a>
+      </li>
+    {% endif %}
   </ul>
+  {% if options.mobile %}
+    <button class="c-navigation__mobile-trigger" data-mobile-trigger aria-label="Navigation Menu">
+      <div class="c-navigation__mobile-trigger__stroke c-navigation__mobile-trigger__stroke--top"></div>
+      <div class="c-navigation__mobile-trigger__stroke c-navigation__mobile-trigger__stroke--middle"></div>
+      <div class="c-navigation__mobile-trigger__stroke c-navigation__mobile-trigger__stroke--bottom"></div>
+    </button>
+  {% endif %}
 {% endmacro %}
+
+
+

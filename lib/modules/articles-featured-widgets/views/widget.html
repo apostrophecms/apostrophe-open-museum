@@ -1,0 +1,29 @@
+{% import 'macros/image.html' as image %}
+{% import 'macros/button.html' as button %}
+
+{% set w = data.widget %}
+<section class="o-wrapper o-background-brand-secondary c-article-featured-widget">
+  <div class="o-container o-container--medium c-article-featured-widget__container">
+    <div class="c-article-featured-widget__media">
+      <a href="{{ w._article._url }}">
+        {{ image.render(w._article.thumbnail.items[0]._pieces[0]) }}
+      </a>
+    </div>
+    <div class="c-article-featured-widget__content">
+      {% if w.label %}
+        <h4 class="o-meta o-meta--alt c-article-featured-widget__meta">{{ w.label }}</h4>
+      {% endif %}
+      <h2 class="o-headline c-article-featured-widget__title"><a href="{{ w._article._url }}">{{ w._article.title }}</a></h2>
+      <div class="o-meta c-article-featured-widget__published">Published on {{ w._article.publishedAt | date('MMMM Do YYYY') }}</div>
+        <ul class="o-tag-list c-article-featured-widget__tags">
+          {% for tag in w._article.tags %}
+            <li><a class="o-tag" href="?tag={{ tag }}">{{ tag }}</a></li>
+          {% endfor %}
+        </ul>
+        {% if w.description %}
+          <p class="o-body c-article-featured-widget__description">{{ w.description }}</p>
+        {% endif %}
+        {{ button.render('Read the Article', w._article._url, { class:'o-button--ghost o-button--ghost--alt' }) }}
+    </div>
+  </div>
+</section>

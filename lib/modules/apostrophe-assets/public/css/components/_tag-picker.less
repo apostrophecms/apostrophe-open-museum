@@ -1,0 +1,36 @@
+.c-tag-picker {
+  position: relative;
+}
+
+.c-tag-picker__tags {
+  min-width: 45rem;
+}
+
+.c-tag-picker__display {
+  background-color: @color-white;
+  border: 1px solid @color-brand-primary;
+  padding: 0.9rem;
+  height: 4.4rem;
+}
+
+[data-tag-picker-selected='true'] {
+  background-color: @color-brand-primary;
+  color: @color-brand-secondary;
+}
+
+.c-tag-picker__display button { margin-right: 0.5rem; }
+
+.c-tag-picker__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  svg {
+    height: 20px;
+    width: 20px;
+  }
+}
+
+.c-tag-picker__submit {
+  float: right;
+}

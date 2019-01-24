@@ -1,5 +1,5 @@
 {
-  "name": "apostrophe-demo-2018",
+  "name": "apostrophe-open-museum",
   "version": "2.0.0",
   "description": "Minimal Apostrophe Boilerplate",
   "main": "app.js",
@@ -8,14 +8,33 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/apostrophecms/apostrophe-demo-2018.git"
+    "url": "https://github.com/apostrophecms/apostrophe-open-museum.git"
   },
   "author": "P'unk Avenue",
   "license": "MIT",
   "dependencies": {
-    "apostrophe": "^2.47.0",
+    "apostrophe": "^2.75.0",
+    "apostrophe-blog": "^2.1.2",
+    "apostrophe-events": "^2.1.3",
+    "apostrophe-favicons": "^1.1.1",
     "apostrophe-headless": "^2.4.0",
-    "lorem-ipsum": "^1.0.6"
+    "apostrophe-open-graph": "^1.1.4",
+    "apostrophe-pieces-import": "^2.1.3",
+    "apostrophe-seo": "^1.1.2",
+    "eslint": "^4.17.0",
+    "eslint-config-punkave": "^1.0.8",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-import": "^2.15.0",
+    "eslint-plugin-node": "^5.1.0",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-standard": "^3.0.1",
+    "lodash": "^4.17.11",
+    "lorem-ipsum": "^1.0.6",
+    "node-geocoder": "^3.22.0",
+    "request-promise": "^4.2.2",
+    "typy": "^2.0.1"
   },
   "nodemonConfig": {
     "verbose": true,

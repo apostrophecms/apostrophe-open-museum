@@ -6,12 +6,31 @@
     line-height: 155%;
     margin-bottom: 2rem;
   }
-
+  ul {
+    list-style-type: circle;
+  }
+  ol, ul {
+    margin-left: 2rem;
+  }
+  ol li, ul li {
+    font-size: @font-size-body;
+    font-family: @font-family-body;
+    line-height: 175%;
+    a {
+      color: @color-brand-primary;
+    }
+  }
   .o-body,
   .o-section-header,
   .o-subheadline,
   .o-headline {
     margin-bottom: 2rem;
+  }
+  blockquote,
+  blockquote p:not([class]) {
+    .o-pull-quote;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
   }
 }
 
@@ -29,5 +48,9 @@
   h5,
   span {
     max-width: 58rem;
+  }
+  blockquote,
+  blockquote p {
+    max-width: 82rem;
   }
 }

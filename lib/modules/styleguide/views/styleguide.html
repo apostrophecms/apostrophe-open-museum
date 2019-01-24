@@ -1,5 +1,7 @@
 {% extends "layout.html" %}
 {% import 'macros/svgs.html' as svgs %}
+{% import 'macros/popups/tag-picker.html' as tags %}
+{% import 'macros/popups/multirange.html' as multirange %}
 
 {% block main %}
   <nav class="sg-nav">
@@ -93,6 +95,32 @@
               <div class="o-field-input-checkbox-ui"></div>
               <label class="o-field-label">Painting</label>
             </div>
+          </li>
+        </ul>
+      </section>
+      <section name="fancy-inputs" class="sg-section">
+        <h2 class="sg-h2">Fancy Inputs</h2>
+        <ul class="sg-list">
+          <li>
+            {{ tags.render([
+              { label: 'Cherries', value: 'cherries' },
+              { label: 'Apples', value: 'apples' },
+              { label: 'Blueberries', value: 'blueberries' },
+              { label: 'Pineapples', value: 'pineapples' }
+              ])
+            }}
+          </li>
+          <li>
+            {{ multirange.render({
+              min: {
+                value: 1400,
+                label: '1400 CE'
+              },
+              max: {
+                value: 2018,
+                label: '2018 CE'
+              }
+            }) }}
           </li>
         </ul>
       </section>

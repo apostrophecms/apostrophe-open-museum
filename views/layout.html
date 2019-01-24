@@ -3,23 +3,47 @@
 
 {% import 'header.html' as header %}
 {% import 'footer.html' as footer %}
+{% import 'demo/modal.html' as modal %}
+{% import 'demo/notification.html' as notification %}
+{% import 'apostrophe-favicons:faviconMacros.html' as favicons %}
 
 {% block title %}
   {# Create a useful, SEO-friendly title tag based on what we have #}
   {% if data.piece %}
-    {{ data.piece.title }}
+    {{ data.piece.title }} | OpenMuseum
   {% elseif data.page %}
-    {{ data.page.title }}
+    {{ data.page.title }} | OpenMuseum
   {% else %}
     {{ apos.log('Looks like you forgot to override the title block in a template that does not have access to an Apostrophe page or piece.') }}
   {% endif %}
 {% endblock %}
 
 {% block extraHead %}
-  {#
-    This block outputs its contents in the HTML document's <head>.
-    It is a good place to put extra <script> <link> and <meta> tags.
-  #}
+  {% if data.piece %}
+    {% if data.piece.seoTitle %}
+      {% set title = data.piece.seoTitle %}
+    {% else %}
+      {% set title = data.piece.title %}
+    {% endif %}
+  {% else %}
+    {% if data.page.seoTitle %}
+      {% set title = data.page.seoTitle %}
+    {% else %}
+      {% set title = data.page.title %}
+    {% endif %}
+  {% endif %}
+
+  {% include "apostrophe-open-graph:view.html" %}
+  {% include "apostrophe-seo:view.html" %}
+  {% include "analytics.html" %}
+  {{ favicons.renderLinks(apos, data.global) }}
+{% endblock %}
+
+{% block bodyClass %}
+  {{ super() }}
+  {% if data.global.demoMode %} is-demo-mode--{{ data.global.demoMode }}{% endif %}
+  {# {{ apos.log(data) }} #}
+  {% if data.user %} is-logged-in{% endif %}
 {% endblock %}
 
 {% block beforeMain %}
@@ -36,4 +60,8 @@
 
 {% block afterMain %}
   {{ footer.render(apos, data.home, data.page, data.global.logoImages) }}
+  {% if data.global.demoMode %}
+    {{ modal.render() }}
+    {{ notification.render() }}
+  {% endif %}
 {% endblock %}

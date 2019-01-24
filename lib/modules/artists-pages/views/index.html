@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% import "macros/masthead.html" as masthead %}
+{% import "apostrophe-pager:macros.html" as pager %}
+{% import "macros/artist-cards.html" as cards %}
+
+{% set page = data.page %}
+
+{% block main %}
+  {{ masthead.render(data.page) }}
+  <div class="o-container o-container--medium">
+    {{ cards.render(data.pieces) }}
+    <div class="c-pager">
+      {{ pager.render({ page: data.currentPage, total: data.totalPages }, data.url) }}
+    </div>
+  </div>
+{% endblock %}

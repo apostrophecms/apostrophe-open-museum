@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% import 'apostrophe-templates:macros/masthead.html' as masthead %}
+{% import 'apostrophe-templates:macros/searchbar.html' as searchbar %}
+{% import 'apostrophe-templates:macros/generic-cards.html' as genericCards %}
+{% import 'apostrophe-templates:macros/artist-cards.html' as artistCards %}
+{% import 'apostrophe-templates:macros/artwork-cards.html' as artworkCards %}
+{% import 'apostrophe-pager:macros.html' as pager %}
+{% set types = apos.modules['apostrophe-search'].options.types %}
+{% set page = data.page %}
+
+{% block main %}
+  {% if data.query.search %}
+    {% set query = data.query.search %}
+  {% elif data.query.tag %}
+    {% set query = data.query.tag %}
+  {% endif %}
+
+  {{ masthead.render(data.page, { title: 'Search results for ‘' + query + '’', search: query } ) }}
+
+  <div class="o-wrapper o-page c-search-results-page">
+    
+    <div class="o-container o-container--medium c-search-results-page__content">
+      {% for type in types %}
+        {% if data.docs[type] %}
+          <h2 class="o-section-header c-search-result__header">Related {{ type | capitalize }}s</h2>
+          <div class="c-search-result__group"> 
+            {% if type === 'artwork' %}
+              {{ artworkCards.render(data.docs[type]) }}
+            {% elif type === 'artist' %}
+              {{ artistCards.render(data.docs[type]) }}
+            {% else %}
+              {{ genericCards.render(data.docs[type], {
+                schema: ['title', 'startDate', 'publishedDate', 'tags', { label: 'Date: ', field: 'year' } ]
+              }) }}
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endfor %}
+      <div class="c-pager">
+        {{ pager.render({ page: data.currentPage, total: data.totalPages }, data.url) }}
+      </div>
+    </div>
+  </div>
+{% endblock %}

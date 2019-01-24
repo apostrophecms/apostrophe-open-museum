@@ -1,9 +1,22 @@
 .c-peer-nav {
   min-width: 20rem;
+  @media @breakpoint-mid {
+    margin-bottom: 7rem;
+  }
 }
 
 .c-peer-nav__title {
   margin-bottom: 2rem;
+  @media @breakpoint-mid {
+    text-align: center;
+  }
+}
+
+.c-peer-nav__items {
+  @media @breakpoint-mid {
+    display: flex;
+    justify-content: space-evenly
+  }
 }
 
 .c-peer-nav__link {
@@ -18,4 +31,11 @@
   font-weight: bold;
   color: @color-brand-primary;
   border-bottom: 2px solid @color-brand-primary;
+}
+
+.c-peer-nav ~ .c-area {
+  max-width: ~"calc(100% - 20rem)";
+  @media @breakpoint-mid {
+    max-width: 100%;
+  }
 }
