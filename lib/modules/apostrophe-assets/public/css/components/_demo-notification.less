@@ -1,7 +1,7 @@
 .c-demo-notification {
   font-family: @font-family-body;
   position: fixed;
-  z-index: 400;
+  z-index: 500;
   right: 2rem;
   bottom: 2rem;
   padding: 2rem 3rem 2rem 5rem;
@@ -11,6 +11,11 @@
   overflow: hidden;
   transition: all 0.5s ease;
   transform: translateX(0rem);
+  @media @breakpoint-small {
+    padding: 2rem 3rem;
+    right: 0;
+    left: 0;
+  }
 }
 
 .c-demo-notification--hidden {
@@ -60,12 +65,14 @@
 .c-demo-notification__button {
   background-image: linear-gradient(-46deg, #EB4339 0%, #B327BF 47%, #6666FE 100%);
   border-radius: 7px;
-  color: @color-white;
   font-weight: 700;
   font-size: 14px;
-  // height: 4rem;
+  white-space: nowrap;
   padding: 1.5rem 1rem;
-  text-decoration: none;
+  a {
+    color: @color-white;
+    text-decoration: none;
+  }
 }
 
 .c-demo-notification__close {
@@ -75,6 +82,11 @@
   bottom: 0;
   padding: 1rem;
   font-size: 19px;
+  @media @breakpoint-small {
+    left: auto;
+    right: 0;
+    height: 4rem;
+  }
   &:active, &:focus {
     outline: none;
     border: none;
