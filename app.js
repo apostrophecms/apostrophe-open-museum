@@ -2,6 +2,7 @@ const path = require('path');
 
 const apos = require('apostrophe')({
   shortName: 'apostrophe-open-museum',
+  baseUrl: 'http://localhost:3001',
 
   // See lib/modules for basic project-level configuration of our modules
   // responsible for serving static assets, managing page templates and
@@ -79,7 +80,8 @@ const apos = require('apostrophe')({
 
     'artworks': {
       extend: 'apostrophe-pieces',
-      restApi: true
+      restApi: true,
+      safeFilters: ['artist', '_artist', 'tag', 'tags', 'perPage']
     },
     'artworks-pages': { extend: 'apostrophe-pieces-pages' },
     'artworks-widgets': { extend: 'apostrophe-pieces-widgets' },
@@ -89,7 +91,11 @@ const apos = require('apostrophe')({
     'articles-widgets': { extend: 'apostrophe-pieces-widgets' },
     'articles-featured-widgets': { extend: 'apostrophe-widgets' },
 
-    'events': { extend: 'apostrophe-events' },
+    'events': {
+      extend: 'apostrophe-events',
+      restApi: true,
+      safeFilters: ['_location', 'location', 'tag', 'tags']
+    },
     'events-pages': { extend: 'apostrophe-pieces-pages' },
     'events-widgets': { extend: 'apostrophe-pieces-widgets' },
 
