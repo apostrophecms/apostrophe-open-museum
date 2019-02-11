@@ -103,7 +103,10 @@ const apos = require('apostrophe')({
     'random-met-artwork-widgets': { extend: 'apostrophe-widgets' },
 
     // Layout Widgets
-    'columns-widgets': { extend: 'apostrophe-widgets' }
+    'columns-widgets': { extend: 'apostrophe-widgets' },
+
+    // Headless Preview Widgets
+    'apostrophe-headless-preview-widgets': {}
 
   }
 });
