@@ -1,7 +1,17 @@
 .c-two-panel {
   display: flex;
+}
+
+.c-two-panel--content-left {
   @media @breakpoint-medium {
-    flex-direction: column
+    flex-direction: column;
+  }
+}
+
+.c-two-panel--content-right {
+  flex-direction: row-reverse;
+  @media @breakpoint-medium {
+    flex-direction: column-reverse;
   }
 }
 
@@ -28,9 +38,8 @@
  .apos-area-widget-wrapper,
  .apos-area-widget,
  .o-background-image
-
  {
    height: 100%;
    width: 100%;
- } 
+ }
 }
