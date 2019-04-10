@@ -37,7 +37,7 @@
       <div class="c-people-page__grid">
       {% for person in data.pieces %}
         <button class="c-people-page__grid-item" data-bio-box-trigger data-role="{{ person.role }}" data-bio="{{ person.description }}">
-          {{ image.render(person.thumbnail.items[0]._pieces[0], {class: 'c-people-page__grid-item__media'}) }}
+          {{ image.render(person.thumbnail, {class: 'c-people-page__grid-item__media'}) }}
           <h3 class="o-subheadline o-subheadline--alt c-people-page__grid-item__title">{{ person.title }}</h3>
         </button>
         {% if (loop.index % 4 === 0) and not loop.last %}
