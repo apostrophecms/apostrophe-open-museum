@@ -72,7 +72,6 @@ const apos = require('apostrophe')({
         secret: 'stTrrmLbEcY9B9Wc'
       }
     },
-    'locations-pages': { extend: 'apostrophe-pieces-pages' },
     'locations-widgets': { extend: 'apostrophe-widgets' },
 
     'artworks': { extend: 'apostrophe-pieces' },
