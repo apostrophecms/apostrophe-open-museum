@@ -1,6 +1,6 @@
 # Open Museum
 
-See it in action at http://demo.apostrophecms.org.
+See it in action at [http://demo.apostrophecms.org](http://demo.apostrophecms.org).
 
 ## Introduction
 
