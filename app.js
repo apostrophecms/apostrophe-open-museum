@@ -99,10 +99,17 @@ const apos = require('apostrophe')({
     'feature-widgets': { extend: 'marquee-widgets' },
     'two-panel-widgets': { extend: 'apostrophe-widgets' },
     'content-widgets': { extend: 'apostrophe-widgets' },
-    'random-met-artwork-widgets': { extend: 'apostrophe-widgets' },
+    'random-met-artwork-widgets': {
+      extend: 'apostrophe-widgets'
+    },
 
     // Layout Widgets
-    'columns-widgets': { extend: 'apostrophe-widgets' }
+    'columns-widgets': { extend: 'apostrophe-widgets' },
 
+    'apostrophe-anchors': {},
+
+    'apostrophe-anchor-field': {}
+    // 'apostrophe-anchors-widgets': {},
+    // 'apostrophe-anchors-rich-text-widgets': {}
   }
 });

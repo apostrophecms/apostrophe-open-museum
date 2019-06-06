@@ -9,7 +9,7 @@
     {{ svgs.logoType() }}
   </a>
   <ul class="c-navigation__items">
-    {% for tab in home._children %}
+    {# {% for tab in home._children %}
       <li class="c-navigation__item
         {% if currentPage and (apos.pages.isAncestorOf(tab, currentPage) or tab._id == currentPage._id) %}
           c-navigation__item--active
@@ -25,7 +25,19 @@
           </ul>
         {% endif %}
         </li>
-    {% endfor %}
+    {% endfor %} #}
+    <li class="c-navigation__item">
+      <a class="o-body c-navigation__link" href="#welcome">Welcome</a>
+    </li>
+    <li class="c-navigation__item">
+      <a class="o-body c-navigation__link" href="#upcoming-events">Upcoming Events</a>
+    </li>
+    <li class="c-navigation__item">
+      <a class="o-body c-navigation__link" href="#new">New to the Collection</a>
+    </li>
+    <li class="c-navigation__item">
+      <a class="o-body c-navigation__link" href="#featured">Featured Artist</a>
+    </li>
     {% if options.search %}
       <li class="c-navigation__item">
         <a class="o-icon o-body c-navigation__link" href="/search">
