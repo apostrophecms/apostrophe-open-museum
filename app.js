@@ -107,9 +107,14 @@ const apos = require('apostrophe')({
     'columns-widgets': { extend: 'apostrophe-widgets' },
 
     'apostrophe-anchors': {},
-
-    'apostrophe-anchor-field': {}
-    // 'apostrophe-anchors-widgets': {},
+    'apostrophe-id-field-type': {},
+    // 'apostrophe-anchors-widgets': {
+    //   anchorsAttribute: 'data-something-special'
+    // }
     // 'apostrophe-anchors-rich-text-widgets': {}
+    'anchor-menu-widgets': {
+      anchors: false
+
+    }
   }
 });

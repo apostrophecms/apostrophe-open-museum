@@ -1,6 +1,6 @@
 {% import 'macros/svgs.html' as svgs %}
 
-{% macro render(apos, home, currentPage, images, options) %}
+{% macro render(apos, home, currentPage, images, options, global) %}
   {% set paths = apos.helpers.getPaths(apos.helpers._shuffle(images.items[0]._pieces)) %}
   <a href="/" class="c-navigation__logo" data-logo-mask>
     <span class="c-navigation__logo-mask">
@@ -26,18 +26,11 @@
         {% endif %}
         </li>
     {% endfor %} #}
-    <li class="c-navigation__item">
-      <a class="o-body c-navigation__link" href="#welcome">Welcome</a>
-    </li>
-    <li class="c-navigation__item">
-      <a class="o-body c-navigation__link" href="#upcoming-events">Upcoming Events</a>
-    </li>
-    <li class="c-navigation__item">
-      <a class="o-body c-navigation__link" href="#new">New to the Collection</a>
-    </li>
-    <li class="c-navigation__item">
-      <a class="o-body c-navigation__link" href="#featured">Featured Artist</a>
-    </li>
+    {% for item in global.specialNav.items %}
+      <li class="c-navigation__item">
+        <a class="o-body c-navigation__link" href="#welcome">Welcome</a>
+      </li>
+    {% endfor %}
     {% if options.search %}
       <li class="c-navigation__item">
         <a class="o-icon o-body c-navigation__link" href="/search">
