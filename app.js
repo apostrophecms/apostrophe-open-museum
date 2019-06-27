@@ -9,6 +9,7 @@ const apos = require('apostrophe')({
 
   modules: {
 
+    'apostrophe-area-structure': {},
     // Apostrophe module configuration
 
     // Note: most configuration occurs in the respective
