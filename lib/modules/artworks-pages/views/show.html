@@ -11,7 +11,7 @@
     {{ breadcrumbs.render(data.page) }}
     <h1 class="o-color-brand-primary o-title c-artwork-page__title">{{ piece.title }}</h1>
     {% if piece._artist %}
-      <h2 class="o-subheadline c-artwork-page__artist">{{ artist.title }}</h2>  
+      <h2 class="o-subheadline c-artwork-page__artist">{{ artist.title }}</h2>
     {% endif %}
     <figure class="c-artwork-page__image">
       {{ image.render(piece.thumbnail.items[0]._pieces[0]) }}
@@ -43,9 +43,11 @@
         <a href="{{ artist._url }}" class="o-button">Learn More</a>
       </div>
     </div>
-    <div class="o-container c-artwork-page__related">
-      <h4 class="o-headline o-color-brand-primary c-artwork-page__related__header">Related Work</h4>
-      {{ cards.render(data.related, { class: 'o-cards--horizontal' }) }}
-    </div>
+    {% if data.related.length > 0 %}
+      <div class="o-container c-artwork-page__related">
+        <h4 class="o-headline o-color-brand-primary c-artwork-page__related__header">Related Work</h4>
+        {{ cards.render(data.related, { class: 'o-cards--horizontal' }) }}
+      </div>
+    {% endif %}
   </main>
 {% endblock %}
