@@ -1,6 +1,5 @@
 {% extends 'layout.html' %}
 {% set piece = data.piece %}
-{% set artist = data.piece._artist %}
 {% import 'apostrophe-templates:macros/breadcrumbs.html' as breadcrumbs %}
 {% import 'macros/artwork-cards.html' as cards %}
 {% import 'macros/image.html' as image %}
@@ -9,12 +8,12 @@
 {% block main %}
   <main class="o-mt-6 o-container o-container--medium c-artwork-page">
     {{ breadcrumbs.render(data.page) }}
-    <h1 class="o-color-brand-primary o-title c-artwork-page__title">{{ piece.title }}</h1>
-    {% if piece._artist %}
-      <h2 class="o-subheadline c-artwork-page__artist">{{ artist.title }}</h2>  
-    {% endif %}
+    <h1 class="o-color-brand-primary o-title c-artwork-page__title">
+      {{ piece.title }}
+    </h1>
     <figure class="c-artist-page__image">
-      {{ image.render(piece.thumbnail.items[0]._pieces[0], { description: true }) }}
+      {% set primaryImage = apos.images.first(piece.thumbnail.items) %}
+      {{ image.render(primaryImage, { description: 'true' }) }}
     </figure>
     <div class="c-meta-columns c-artist-page__content">
       <div class="c-meta-columns__left c-artist-page__meta">
