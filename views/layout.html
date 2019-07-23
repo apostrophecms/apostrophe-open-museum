@@ -42,7 +42,6 @@
 {% block bodyClass %}
   {{ super() }}
   {% if data.global.demoMode %} is-demo-mode--{{ data.global.demoMode }}{% endif %}
-  {# {{ apos.log(data) }} #}
   {% if data.user %} is-logged-in{% endif %}
 {% endblock %}
 

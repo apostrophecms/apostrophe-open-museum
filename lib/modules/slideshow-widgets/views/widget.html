@@ -29,7 +29,8 @@
     <div class="swiper-wrapper c-slideshow__wrapper">
       {% for image in images.items[0]._pieces %}
         <div class="swiper-slide c-slideshow__slide">
-          {{ img.render(image) }}
+          {% set slideImage = apos.images.first(image) %}
+          {{ img.render(slideImage) }}
         </div>
       {% endfor %}
     </div>
