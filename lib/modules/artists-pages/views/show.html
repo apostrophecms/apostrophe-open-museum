@@ -12,8 +12,8 @@
       {{ piece.title }}
     </h1>
     <figure class="c-artist-page__image">
-      {% set primaryImage = apos.images.first(piece.thumbnail.items) %}
-      {{ image.render(primaryImage, { description: 'true' }) }}
+      {% set thumbnail = apos.images.first(piece.thumbnail.items) %}
+      {{ image.render(thumbnail, { description: 'true' }) }}
     </figure>
     <div class="c-meta-columns c-artist-page__content">
       <div class="c-meta-columns__left c-artist-page__meta">

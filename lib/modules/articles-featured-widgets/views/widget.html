@@ -6,8 +6,8 @@
   <div class="o-container o-container--medium c-article-featured-widget__container">
     <div class="c-article-featured-widget__media">
       <a href="{{ w._article._url }}">
-        {% set featureImage = apos.images.first(w._article.thumbnail.items) %}
-        {{ image.render(featureImage) }}
+        {% set thumbnail = apos.images.first(w._article.thumbnail.items) %}
+        {{ image.render(thumbnail) }}
       </a>
     </div>
     <div class="c-article-featured-widget__content">

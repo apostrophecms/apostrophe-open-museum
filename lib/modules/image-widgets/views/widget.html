@@ -1,6 +1,6 @@
 {% import 'macros/image.html' as image %}
 
 <div class="c-image">
-  {% set primaryImage = apos.images.first(data.widget.image.items) %}
-  {{ image.render(primaryImage, { description: data.widget.caption }) }}
+  {% set imgObj = apos.images.first(data.widget.image.items) %}
+  {{ image.render(imgObj, { description: data.widget.caption }) }}
 </div>

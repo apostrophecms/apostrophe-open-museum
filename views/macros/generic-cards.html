@@ -4,8 +4,8 @@
   <div class="o-card c-generic-card">
     <div class="o-card__media c-generic-card__media">
       <a href="{{ piece._url }}">
-        {% set primaryImage = apos.images.first(piece.thumbnail.items) %}
-        {{ image.render(primaryImage, { alt: piece.title }) }}
+        {% set thumbnail = apos.images.first(piece.thumbnail.items) %}
+        {{ image.render(thumbnail, { alt: piece.title }) }}
       </a>
     </div>
     <div class="o-card__content c-generic-card__content">

@@ -8,16 +8,16 @@
     <div class="o-container c-masthead__inner">
       <div class="c-masthead__content">
         {% if options.page %}
-          {{ breadcrumbs.render(options.page) }}  
+          {{ breadcrumbs.render(options.page) }}
         {% else %}
-          {{ breadcrumbs.render(page) }}  
+          {{ breadcrumbs.render(page) }}
         {% endif %}
         <h1 class="o-title c-masthead__title">{{ options.title or page.title }}</h1>
         {% if options.type === 'event' %}
-          <p class="o-body c-masthead__description"> 
+          <p class="o-body c-masthead__description">
             {{ page.startDate | date('MMMM Do YYYY') }}
           </p>
-          <p class="o-body c-masthead__description"> 
+          <p class="o-body c-masthead__description">
             {{ page._location.title }}
           </p>
         {% endif %}
@@ -30,7 +30,8 @@
       </div>
       {% if options.media %}
         <div class="c-masthead__media">
-          {{ image.render(page.thumbnail.items[0]._pieces[0], {alt: page.title}) }}
+          {% set thumbnail = apos.images.first(page.thumbnail.items) %}
+          {{ image.render(thumbnail, {alt: page.title}) }}
         </div>
       {% endif %}
     </div>
