@@ -30,7 +30,7 @@
       </div>
       {% if options.media %}
         <div class="c-masthead__media">
-          {% set thumbnail = apos.images.first(page.thumbnail.items) %}
+          {% set thumbnail = apos.images.first(page.thumbnail) %}
           {{ image.render(thumbnail, {alt: page.title}) }}
         </div>
       {% endif %}

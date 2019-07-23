@@ -3,7 +3,7 @@
 {% macro card(artist) %}
   <a class="o-card c-artist-card" href="{{ artist._url }}">
     <div class="o-card__media c-artist-card__media">
-      {% set artistImage = apos.images.first(artist.thumbnail.items) %}
+      {% set artistImage = apos.images.first(artist.thumbnail) %}
       {{ image.render(artistImage, {alt: artist.title }) }}
     </div>
     <div class="o-card__content c-artist-card__content">
