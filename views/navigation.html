@@ -1,6 +1,6 @@
 {% import 'macros/svgs.html' as svgs %}
 
-{% macro render(apos, home, currentPage, images, options) %}
+{% macro render(home, currentPage, images, options) %}
   {% set paths = apos.helpers.getPaths(apos.helpers._shuffle(images.items[0]._pieces)) %}
   <a href="/" class="c-navigation__logo" data-logo-mask>
     <span class="c-navigation__logo-mask">

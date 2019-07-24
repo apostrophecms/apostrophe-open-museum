@@ -1,14 +1,14 @@
 {% import 'navigation.html' as navigation %}
 {% import 'macros/svgs.html' as svgs %}
 
-{% macro render(apos, home, currentPage, images) %}
+{% macro render(home, currentPage, images) %}
   <footer class="o-background-light c-footer">
     <div class="o-container c-footer__inner">
       <div class="c-footer__nav">
-        {{ navigation.render(apos, home, currentPage, images) }}
+        {{ navigation.render(home, currentPage, images) }}
       </div>
       <div class="o-body o-body--small c-footer__credit">
-        <a class="c-footer__logo" target="_blank" href="http://apostrophecms.org"> 
+        <a class="c-footer__logo" target="_blank" href="http://apostrophecms.org">
           {{ svgs.apostropheLogo() }}
         </a>
         This is the <a target="_blank" class="c-footer__apostrophe-link" href="http://apostrophecms.org">ApostropheCMS</a> Demo site <br/>
