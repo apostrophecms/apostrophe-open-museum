@@ -46,7 +46,7 @@
 {% endblock %}
 
 {% block beforeMain %}
-  {{ header.render(apos, data.home, data.page, data.global.logoImages) }}
+  {{ header.render(data.home, data.page, data.global.logoImages) }}
 {% endblock %}
 
 {% block main %}
@@ -58,7 +58,7 @@
 {% endblock %}
 
 {% block afterMain %}
-  {{ footer.render(apos, data.home, data.page, data.global.logoImages) }}
+  {{ footer.render(data.home, data.page, data.global.logoImages) }}
   {% if data.global.demoMode %}
     {{ modal.render() }}
     {{ notification.render() }}
