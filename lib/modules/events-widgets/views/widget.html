@@ -4,7 +4,9 @@
 <div class="o-container c-event-widget">
   <div>
     <div class="c-event-widget__header">
-      <h4 class="o-subheadline">{{ w.headline }}</h4>
+      {% if w.headline %}
+        <h4 class="o-subheadline">{{ w.headline }}</h4>
+      {% endif %}
       <a class="o-link" href="{{ w.linkUrl if w.linkUrl else w._linkPage._url }}">{{ w.linkText }}</a>
     </div>
     <div class="c-event-widget__content">
