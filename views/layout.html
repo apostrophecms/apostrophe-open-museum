@@ -3,6 +3,8 @@
 
 {% import 'header.html' as header %}
 {% import 'footer.html' as footer %}
+{% import 'demo/modal.html' as modal %}
+{% import 'demo/notification.html' as notification %}
 {% import 'apostrophe-favicons:faviconMacros.html' as favicons %}
 
 {% block title %}
@@ -33,11 +35,18 @@
 
   {% include "apostrophe-open-graph:view.html" %}
   {% include "apostrophe-seo:view.html" %}
+  {% include "analytics.html" %}
   {{ favicons.renderLinks(apos, data.global) }}
 {% endblock %}
 
+{% block bodyClass %}
+  {{ super() }}
+  {% if data.global.demoMode %} is-demo-mode--{{ data.global.demoMode }}{% endif %}
+  {% if data.user %} is-logged-in{% endif %}
+{% endblock %}
+
 {% block beforeMain %}
-  {{ header.render(apos, data.home, data.page, data.global.logoImages) }}
+  {{ header.render(data.home, data.page, data.global.logoImages) }}
 {% endblock %}
 
 {% block main %}
@@ -49,5 +58,9 @@
 {% endblock %}
 
 {% block afterMain %}
-  {{ footer.render(apos, data.home, data.page, data.global.logoImages) }}
+  {{ footer.render(data.home, data.page, data.global.logoImages) }}
+  {% if data.global.demoMode %}
+    {{ modal.render() }}
+    {{ notification.render() }}
+  {% endif %}
 {% endblock %}

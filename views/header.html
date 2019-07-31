@@ -1,9 +1,9 @@
 {% import 'navigation.html' as navigation %}
 
-{% macro render(apos, home, currentPage, images) %}
+{% macro render(home, currentPage, images) %}
   <div class="c-header">
     <nav class="o-container c-header__inner" role="navigation">
-      {{ navigation.render(apos, home, currentPage, images, { search: true, arrows: true, mobile: true}) }}
+      {{ navigation.render(home, currentPage, images, { search: true, arrows: true, mobile: true}) }}
     </nav>
   </div>
 {% endmacro %}

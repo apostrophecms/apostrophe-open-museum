@@ -1,8 +1,10 @@
-# Apostrophe Demo 2018
+# Open Museum
+
+See it in action with demo content at [http://demo.apostrophecms.org](http://demo.apostrophecms.org).
 
 ## Introduction
 
-This demo is meant to serve two main goals: The first being it is fully styled, responsive, generic website to use as a starting point for your own Apostrophe development. The second being a demonstration of a fully featured production-ready Apostrophe build: a host of widgets (both simple and complex), networks of related content (pieces), custom content taxonomy, importing pieces, maps, advanced Apostrophe configuration, etc. all while organizing code the way we, the ApostropheCMS maintainers, do in production.
+This project is meant to serve two main goals: The first being it is fully styled, responsive, generic website to use as a starting point for your own Apostrophe development. The second being a demonstration of a fully featured production-ready Apostrophe build: a host of widgets (both simple and complex), networks of related content (pieces), custom content taxonomy, importing pieces, maps, advanced Apostrophe configuration, etc. all while organizing code the way we, the ApostropheCMS maintainers, do in production.
 
 ## Getting Started
 
@@ -11,8 +13,8 @@ You need to [set up your environment](https://apostrophecms.org/docs/tutorials/g
 Then run:
 
 ```
-git clone https://github.com/apostrophecms/apostrophe-demo-2018
-cd apostrophe-demo-2018
+git clone https://github.com/apostrophecms/apostrophe-open-museum
+cd apostrophe-open-museum
 npm install
 node app apostrophe-users:add admin admin
 [enter password when prompted]
@@ -112,7 +114,7 @@ In `/app.js`
 ```
 
 const apos = require('apostrophe')({
-  shortName: 'apostrophe-demo-2018',
+  shortName: 'apostrophe-open-museum',
   modules: {
     // ... other module configurations
     'locations': {

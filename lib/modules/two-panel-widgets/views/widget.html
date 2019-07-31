@@ -1,8 +1,6 @@
 {% set w = data.widget %}
 {% if w.config %}
   {% set config = w.config %}
-{% else %}
-  {% set config = 'c-two-panel--content-left' %}
 {% endif %}
 
 {% set areaSchema = apos.helpers._find(data.manager.schema, { name: 'body' }) %}

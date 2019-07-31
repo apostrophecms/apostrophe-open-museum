@@ -28,10 +28,16 @@
   display: flex;
   justify-content: space-between;
   padding: 3rem;
+  @media @breakpoint-small {
+    flex-direction: column;
+  }
 }
 
 .c-slideshow__title {
   width: 55%;
+  @media @breakpoint-small {
+    width: 100%;
+  }
 }
 
 .c-slideshow__info {
@@ -40,6 +46,9 @@
   justify-content: flex-end;
   width: 45%;
   margin-top: 0.9rem;
+  @media @breakpoint-small {
+    width: 100%;
+  }
 }
 
 .c-slideshow__gallery-description-items {
@@ -59,6 +68,7 @@
 .c-slideshow__pager-button {
   border: 0;
   background: transparent;
+  cursor: pointer;
   svg {
     max-width: 6px;
     padding-top: 4px;
@@ -77,4 +87,7 @@
 
 .c-slideshow__description-wrapper {
   text-align: right;
+  @media @breakpoint-small {
+    text-align: left;
+  }
 }

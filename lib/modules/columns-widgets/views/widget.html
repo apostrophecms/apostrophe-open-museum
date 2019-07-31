@@ -2,14 +2,10 @@
 
 {% if w.background %}
   {% set bg = w.background %}
-{% else %}
-  {% set bg = 'none' %}
 {% endif %}
 
 {% if w.config %}
   {% set config = w.config %}
-{% else %}
-  {% set config = 'two' %}
 {% endif %}
 
 {% if config === 'two' or config === 'two-reverse' %}

@@ -1,13 +1,20 @@
+# Intall dependencies and copy application
+FROM node:carbon as builder
+
+# Install dependencies only
+# Will only run npm install when dependencies changes
+COPY package.json package-lock.json /app/
+RUN cd /app/ && npm install
+
+# Copy app
+COPY . /app/
+
+# Build final cointainer
 FROM node:carbon
 
-# Create app directory
-RUN mkdir -p /app
+# Copy app from previous stage
+COPY --from=builder /app /app
 WORKDIR /app
-
-# Bundle app source
-COPY . /app
-RUN npm install
-
 # Mount persistent storage
 VOLUME /app/data
 VOLUME /app/public/uploads

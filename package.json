@@ -1,5 +1,5 @@
 {
-  "name": "apostrophe-demo-2018",
+  "name": "apostrophe-open-museum",
   "version": "2.0.0",
   "description": "Minimal Apostrophe Boilerplate",
   "main": "app.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/apostrophecms/apostrophe-demo-2018.git"
+    "url": "https://github.com/apostrophecms/apostrophe-open-museum.git"
   },
   "author": "P'unk Avenue",
   "license": "MIT",
@@ -32,6 +32,7 @@
     "lodash": "^4.17.11",
     "lorem-ipsum": "^1.0.6",
     "node-geocoder": "^3.22.0",
+    "request-promise": "^4.2.2",
     "typy": "^2.0.1"
   },
   "nodemonConfig": {

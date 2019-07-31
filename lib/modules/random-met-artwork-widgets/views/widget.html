@@ -1,0 +1,12 @@
+{% import 'macros/loading.html' as loading %}
+
+<div class="o-container o-container--narrow c-random-met-artwork c-random-met-artwork--loading" data-random-met-artwork-widget>
+  <div class="c-random-met-artwork-loading" data-loading>
+    Loading a random work from the MET
+    {{ loading.render() }}
+  </div>
+  <div class="c-image c-random-met-artwork-image">
+    <img class="o-image">
+    <figcaption class="o-meta o-image__caption"></figcaption>
+  </div>
+</div>

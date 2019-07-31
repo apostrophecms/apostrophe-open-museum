@@ -1,7 +1,10 @@
 const path = require('path');
 
 const apos = require('apostrophe')({
-  shortName: 'apostrophe-demo-2018',
+  shortName: 'apostrophe-open-museum',
+
+  // Apostrophe Blog bundle
+  bundles: [ 'apostrophe-blog' ],
 
   // See lib/modules for basic project-level configuration of our modules
   // responsible for serving static assets, managing page templates and
@@ -72,7 +75,6 @@ const apos = require('apostrophe')({
         secret: 'stTrrmLbEcY9B9Wc'
       }
     },
-    'locations-pages': { extend: 'apostrophe-pieces-pages' },
     'locations-widgets': { extend: 'apostrophe-widgets' },
 
     'artworks': { extend: 'apostrophe-pieces' },
@@ -80,8 +82,8 @@ const apos = require('apostrophe')({
     'artworks-widgets': { extend: 'apostrophe-pieces-widgets' },
 
     'articles': { extend: 'apostrophe-blog' },
-    'articles-pages': { extend: 'apostrophe-pieces-pages' },
-    'articles-widgets': { extend: 'apostrophe-pieces-widgets' },
+    'articles-pages': { extend: 'apostrophe-blog-pages' },
+    'articles-widgets': { extend: 'apostrophe-blog-widgets' },
     'articles-featured-widgets': { extend: 'apostrophe-widgets' },
 
     'events': { extend: 'apostrophe-events' },
@@ -100,6 +102,7 @@ const apos = require('apostrophe')({
     'feature-widgets': { extend: 'marquee-widgets' },
     'two-panel-widgets': { extend: 'apostrophe-widgets' },
     'content-widgets': { extend: 'apostrophe-widgets' },
+    'random-met-artwork-widgets': { extend: 'apostrophe-widgets' },
 
     // Layout Widgets
     'columns-widgets': { extend: 'apostrophe-widgets' }

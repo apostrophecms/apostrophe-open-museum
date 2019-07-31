@@ -4,7 +4,8 @@
   <div class="o-card c-generic-card">
     <div class="o-card__media c-generic-card__media">
       <a href="{{ piece._url }}">
-        {{ image.render(piece.thumbnail.items[0]._pieces[0], { alt: piece.title }) }}
+        {% set thumbnail = apos.images.first(piece.thumbnail) %}
+        {{ image.render(thumbnail, { alt: piece.title }) }}
       </a>
     </div>
     <div class="o-card__content c-generic-card__content">
@@ -14,10 +15,10 @@
             <a href="{{ piece._url }}" class="o-body o-card__info c-generic-card__title"><strong>{{ piece.title }}</strong></a>
           {% elif item === 'startDate' or item === 'publishedAt' %}
             <span class="o-card__info">{{ piece[item] | date('MMMM Do YYYY') }}</span>
-          {% elif item === 'tags' %} 
+          {% elif item === 'tags' %}
             <ul class="o-tag-list">
               {% for tag in piece.tags %}
-                <li><a class="o-tag" href="{{ options.tagsUrl if options.tagsUrl }}?tag={{ tag }}">{{ tag }}</a></li>
+                <li><a class="o-tag" href="{{ options.tagsUrl if options.tagsUrl }}?tags={{ tag }}">{{ tag }}</a></li>
               {% endfor %}
             </ul>
           {% elif apos.helpers._isObject(item) %}
