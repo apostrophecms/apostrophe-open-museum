@@ -3,9 +3,6 @@ const path = require('path');
 const apos = require('apostrophe')({
   shortName: 'apostrophe-open-museum',
 
-  // Apostrophe Blog bundle
-  bundles: [ 'apostrophe-blog' ],
-
   // See lib/modules for basic project-level configuration of our modules
   // responsible for serving static assets, managing page templates and
   // configuring user accounts.
@@ -82,8 +79,8 @@ const apos = require('apostrophe')({
     'artworks-widgets': { extend: 'apostrophe-pieces-widgets' },
 
     'articles': { extend: 'apostrophe-blog' },
-    'articles-pages': { extend: 'apostrophe-blog-pages' },
-    'articles-widgets': { extend: 'apostrophe-blog-widgets' },
+    'articles-pages': { extend: 'apostrophe-pieces-pages' },
+    'articles-widgets': { extend: 'apostrophe-pieces-widgets' },
     'articles-featured-widgets': { extend: 'apostrophe-widgets' },
 
     'events': { extend: 'apostrophe-events' },
