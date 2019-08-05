@@ -13,7 +13,7 @@
     </h1>
     <figure class="c-artist-page__image">
       {% set thumbnail = apos.images.first(piece.thumbnail) %}
-      {{ image.render(thumbnail, { description: 'true' }) }}
+      {{ image.render(thumbnail, { description: true }) }}
     </figure>
     <div class="c-meta-columns c-artist-page__content">
       <div class="c-meta-columns__left c-artist-page__meta">

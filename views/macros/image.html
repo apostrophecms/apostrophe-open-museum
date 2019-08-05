@@ -3,10 +3,11 @@
     {% if imageObj === undefined %}
       <img class="o-image" src="https://via.placeholder.com/300x200" alt="{{ options.alt }}">
     {% else %}
-      <img class="o-image" src="{{ apos.attachments.url(imageObj, { size: options.size, crop: imageObj._crop }) }}" alt="{{ options.alt or imageObj.title }}">
-      {% if options.description === true and imageObj.description %}
+      {% set url = apos.attachments.url(imageObj, { size: options.size, crop: imageObj._crop }) %}
+      <img class="o-image" src="{{ url }}" alt="{{ options.alt or imageObj.title or imageObj._description}}">
+      {% if options.description === true and imageObj._description %}
         <figcaption class="o-meta o-image__caption">
-         {{ imageObj.description }}
+          {{ imageObj._description }}
         </figcaption>
       {% elif apos.helpers._isString(options.description) %}
         <figcaption class="o-meta o-image__caption">
