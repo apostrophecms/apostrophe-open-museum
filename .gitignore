@@ -19,3 +19,4 @@ node_modules
 # Don't commit P'unk specific settings
 /deployment/settings.staging
 /deployment/settings.production
+/deployment/settings.private*
