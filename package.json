@@ -10,7 +10,7 @@
     "type": "git",
     "url": "https://github.com/apostrophecms/apostrophe-open-museum.git"
   },
-  "author": "P'unk Avenue",
+  "author": "Apostrophe Technologies, Inc.",
   "license": "MIT",
   "dependencies": {
     "apostrophe": "^2.102.2",

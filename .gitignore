@@ -16,7 +16,7 @@ node_modules
 .jshintrc
 /public/js/_site-compiled.js
 
-# Don't commit P'unk specific settings
+# Don't commit demo specific settings
 /deployment/settings.staging
 /deployment/settings.production
 /deployment/settings.private*
