@@ -13,10 +13,10 @@
   "author": "Apostrophe Technologies, Inc.",
   "license": "MIT",
   "dependencies": {
-    "apostrophe": "^2.102.2",
+    "apostrophe": "^2.106.3",
     "apostrophe-blog": "^2.1.2",
     "apostrophe-events": "^2.1.5",
-    "apostrophe-favicons": "^1.0.15",
+    "apostrophe-favicons": "^2.0.4",
     "apostrophe-open-graph": "^1.1.4",
     "apostrophe-pieces-import": "^2.1.5",
     "apostrophe-seo": "^1.2.1",
