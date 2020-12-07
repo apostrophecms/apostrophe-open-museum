@@ -27,6 +27,32 @@ const apos = require('apostrophe')({
 
     'apostrophe-templates': { viewsFolderFallback: path.join(__dirname, 'views') },
 
+    'apostrophe-workflow': {
+      prefixes: {
+        'es_US': '/es',
+      },
+      locales: [
+        {
+          name: 'default',
+          label: 'Default (US English)',
+          private: true,
+          children: [
+            {
+              name: 'es_US',
+              label: 'US Spanish'
+            }
+          ]
+        },
+      ],
+      // IMPORTANT: if you follow the examples below,
+      // be sure to set this so the templates work
+      alias: 'workflow',
+      // Recommended to save database space. You can still
+      // export explicitly between locales
+      replicateAcrossLocales: false
+    },
+    'apostrophe-workflow-modified-documents': {},
+    
     // This module adds Nunjucks "helper functions" and helper data useful in all templates.
     //
     // Some uses include special template functions that go outside the depth of nunjucks,
